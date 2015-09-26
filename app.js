@@ -24,7 +24,7 @@ app.locals.pretty = true;
     app.use(bodyParser.json({ type: 'text/json', limit: '5mb' }));
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(cookieParser());
-    app.use(serveStatic('public'));
+    app.use(serveStatic('./public'));
 
 
 app.use(session({
@@ -54,7 +54,7 @@ app.use(function(err, req, res, next){
     // additional logic, like emailing OPS staff w/ stack trace
 });
 var server = app.listen(app.get('port'), function () {
-    console.log("Express server running in '" + global.mode + "' mode, listening on port " + app.get('port'));
+    console.log("www.nickbolles.com server running in '" + global.mode + "' mode, listening on port " + app.get('port'));
 });
 
 
