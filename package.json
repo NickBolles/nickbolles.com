@@ -4,6 +4,16 @@
   "version": "0.0.1",
   "main": "app.js",
   "processID": "com.nickbolles.www",
+  "routerConfig": {
+    "ports":{
+      "80":{
+        "router":{
+          "www.nickbolles.com/*": "http://127.0.0.1:9000/[1]",
+          "nickbolles.com/*": "http://127.0.0.1:9000/[1]"
+        }
+      }
+    }
+  },
   "private": true,
   "dependencies": {
     "body-parser": "^1.9.3",
