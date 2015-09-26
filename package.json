@@ -2,6 +2,7 @@
   "name": "",
   "author": "Nick Bolles",
   "version": "0.0.1",
+  "main": "app.js",
   "private": true,
   "dependencies": {
     "body-parser": "^1.9.3",
