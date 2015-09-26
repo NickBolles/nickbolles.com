@@ -14,7 +14,7 @@ global.mode = process.env.NODE_ENV = "production";
 global.testing = (global.mode == 'development');
 //now load the logger
 //set the app settings
-app.set('port', 8000);
+app.set('port', 9000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
 app.engine("html", consolidate.handlebars);
