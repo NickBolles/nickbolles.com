@@ -2,6 +2,9 @@
   "name": "www.nickbolles.com",
   "author": "Nick Bolles",
   "version": "0.0.1",
+  "scripts"{
+    "build": "gulp production"
+  },
   "main": "app.js",
   "processID": "com.nickbolles.www",
   "routerConfig": {
