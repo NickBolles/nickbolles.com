@@ -2,7 +2,7 @@
   "name": "www.nickbolles.com",
   "author": "Nick Bolles",
   "version": "0.0.1",
-  "scripts"{
+  "scripts":{
     "build": "gulp production"
   },
   "main": "app.js",
