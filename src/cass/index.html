@@ -1,0 +1,196 @@
+<!DOCTYPE HTML> 
+<html>
+	<head>
+		<title>Nicks Website</title>
+		
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script type='text/javascript' src='jquery-2.0.2.min.js'></script>
+		<script type='text/javascript' src='jquery.scrollTo.js'></script>
+		<script>
+			var sections;
+			$(document).ready(function(){
+				sections = $('#start, #firstspot, #secondspot, #bridge, #overlook, #final, #iloveyou');
+				$('#parkmap').fadeOut(0);
+				$('#holtonmap').fadeOut(0);
+				updatestep();
+				$(window).on('hashchange', function() {
+					updatestep();
+				});
+			});
+			function updatestep(){
+				sections.fadeOut();
+				switch(window.location.hash){
+					case "":
+					case "#start":
+						console.log("start");
+						$("#start").fadeIn();
+						break;
+					case "#firstspot":
+						console.log("first");
+						$("#firstspot").fadeIn();
+						
+						break;
+					case "#secondspot":
+						console.log("second");
+						$("#secondspot").fadeIn();
+						break;
+					case "#bridge":
+						$("#bridge").fadeIn();
+						console.log("bridge");
+						break;
+					case "#overlook":
+						$("#overlook").fadeIn();
+						console.log("overlook");
+						break;
+					case "#final":
+						$("#final").fadeIn();
+						console.log("end");
+						break;
+					case "#iloveyou":
+						$("#iloveyou").delay(500).fadeIn(1000);
+						$('body').css("background-image", "url(hearts.jpg)"); 
+						$('body:before').css("background", "linear-gradient(transparent, transparent)");
+						console.log("end");
+						break;
+				}
+			}
+			function gotostartsecond(){
+				$('#startfirst').fadeOut(500);
+				$('#startsecond').delay(500).fadeIn(500);
+				$('#startsecondok').delay(1000).fadeIn(500);
+
+			}
+			function gotostartinstructions(){
+				$('#startsecond').fadeOut(500);
+				$('#startinstructions').delay(500).fadeIn(500);
+
+			}
+			function gotooverlookinstructions(){
+				$('#overlookpause').fadeOut(500);
+				$('#overlookinstructions').delay(500).fadeIn(500);
+				$('#holtonmap').delay(500).fadeIn(500);
+
+
+			}
+			function showholtonmap(){
+				$('#directionsbutton').fadeOut(500);
+				$('#holtonmap').delay(500).fadeIn(500);
+			}
+			function showparkmap(){
+				$('#parkdirectionsbutton').fadeOut(500);
+				$('#parkmap').delay(500).fadeIn(500);
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1>Cassidys Treasure Hunt...</h1>		
+		<div id="display">
+			<span id="start" >
+				<span id="startfirst">
+					<h2>Why Hello There</h2>
+					<p>We're gonna go on a little adventure. First im going to explain the instructions and A couple rules. Ok?</p>
+					<a id="startfirstok" href="javascript: gotostartsecond();" style="font-size: 30px;"><div class="download" style="height:40px;width:200px;">OK</div></a>
+				</span>
+				<span id="startsecond">
+					<h2>Instructions</h2>
+					<ol>
+						<li Style= "font-size: 30px;">First Off, DO NOT LEAVE Pizza Planet Yet! You can leave when the instructions tell you</li>
+						<li>Second off, If at any time you have trouble text 715-781-5549. An agent will be available to assist you.</li>
+						<li>Please text 715-781-5549 when you scan each QR code stating the title of the page in the text.</li>
+						<li>Please follow these rules because there are some elements to the adventure that depend on it</li>
+					</ol>
+					<p>In order to successfully finish this treasure hunt, You will need to follow the instructions on this site and when you do you will find pieces of paper with QR codes on it. You will use an app to take a picture of the QR code and it will bring you to the next page, and thus the next instructions. Please download the App Below. Once You have this downloaded click "next" to continue to the first set of instructions. </p>
+					<a href="https://play.google.com/store/apps/details?id=com.dodo.scanner&referrer=utm_source%3Dappbrain%26utm_medium%3Dappbrain_web%26utm_campaign%3Dappbrain_web" style="font-size: 30px;"><div class="download" style= "height:40px;width:300px;">Download QR App</div></a>
+					<a id="startsecondok" href="javascript: gotostartinstructions();" style="font-size: 30px;"><div class="download" style="height:40px;width:200px;">Next</div></a>
+				</span>
+				<span id="startinstructions">
+					<h2>First Step</h2>
+					<p>Your first QR Code is located on top of your back Left Tire. Go get it and scan it!</p>
+					<p>You may close this page now, the QR code will open a new one.</p>
+					<a href="#firstspot" style="position: absolute; bottom:0;right:0;background: #000; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; height: 25px;">
+						Click Here to Simulate the QR Code
+					</a>
+				</span>
+				
+			</span>
+			
+			<span id="firstspot">
+				<h2>First Step</h2>
+				<p>Great it worked!</p>
+				<p>Please drive to this iconic Stillwater site.</p>
+				<img src="bridge.jpg"></img>
+				<p>As you cross into Minnesota there is a bench on the right side (facing away from the river, or north) of the bridge. Look for your next instructions there.</p>
+				<a href="#secondspot" style="position: absolute; bottom:0;right:0;background: #000; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; height: 25px;">
+					Click Here to Simulate the QR Code
+				</a>
+			</span>
+			
+			<span id="secondspot">
+				<h2>Someone Is Waiting for You Under the Bridge</h2>
+				<p> Go to the tunnel underneath the bridge to spend a little quality time with a special someone and maybe even get your next clue!</p>
+				<a href="#bridge" style="position: absolute; bottom:0;right:0;background: #000; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; height: 25px;">
+					Click Here to Simulate the QR Code
+				</a>
+			</span>
+			
+			<span id="bridge" >
+				<h2>The view gets even better then this though</h2>
+				<p>Head over to Pioneer Park and see what im talking about.</p>
+				<br>
+				<p>The next set of instructions is again on a bench with a good view.</p>
+				<a id="startsecondok" href="javascript: showparkmap();" style="font-size: 30px;"><div class="download" style="height:40px;width:200px;">OK</div></a>
+				<div id="parkmap" style="height:350; width:425;">
+					<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=Chestnut+St+E&amp;daddr=2nd+St+N&amp;hl=en&amp;geocode=FTKArwIdWOp3-g%3BFfaPrwIdZth3-g&amp;sll=45.053454,-92.809024&amp;sspn=0.026831,0.066047&amp;t=m&amp;gl=us&amp;mra=mift&amp;mrsp=1&amp;sz=15&amp;ie=UTF8&amp;ll=45.053454,-92.809024&amp;spn=0.026831,0.066047&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=Chestnut+St+E&amp;daddr=2nd+St+N&amp;hl=en&amp;geocode=FTKArwIdWOp3-g%3BFfaPrwIdZth3-g&amp;sll=45.053454,-92.809024&amp;sspn=0.026831,0.066047&amp;t=m&amp;gl=us&amp;mra=mift&amp;mrsp=1&amp;sz=15&amp;ie=UTF8&amp;ll=45.053454,-92.809024&amp;spn=0.026831,0.066047" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+				</div>
+				<a href="#overlook" style="position: absolute; bottom:0;right:0;background: #000; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; height: 25px;">
+					Click Here to Simulate the QR Code
+				</a>
+			</span>
+			
+			<span id="overlook" >
+				<span id="overlookpause">
+					<h2>Take a seat. Isnt this view great?</h2>
+					<p>I wish I was there to keep you warm. Dont worry, we will re-unite soon enough.</p>
+					<br>
+					<p>Click OK when your done taking in the view</p>
+					<a id="overlookok" href="javascript: gotooverlookinstructions();" style="font-size: 30px;"><div class="download" style="height:40px;width:200px;">OK</div></a>
+				</span>
+				<span id="overlookinstructions">
+					<h2>Okay Fine I'll Give You Your Next Step</h2>
+					<p>Have You Been Wondering Why the background is stars perhaps?</p>
+					<br>
+					<p>For this clue of course! We once spent some time star gazing not too far from here. Do you remember where?</p>
+					<p>If you do you will find your next clue there</p>
+					<p>there will be a familiar car there, look on the roof for the instructions </p>
+					<div id="holtonmap">
+							<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=2nd+St+N&amp;daddr=County+Hwy+E&amp;hl=en&amp;geocode=FemRrwIdktd3-g%3BFRGSrwIdFTV4-g&amp;sll=45.053454,-92.809024&amp;sspn=0.026831,0.066047&amp;t=h&amp;gl=us&amp;mra=mift&amp;mrsp=0&amp;sz=15&amp;ie=UTF8&amp;ll=45.053454,-92.809024&amp;spn=0.026831,0.066047&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=2nd+St+N&amp;daddr=County+Hwy+E&amp;hl=en&amp;geocode=FemRrwIdktd3-g%3BFRGSrwIdFTV4-g&amp;sll=45.053454,-92.809024&amp;sspn=0.026831,0.066047&amp;t=h&amp;gl=us&amp;mra=mift&amp;mrsp=0&amp;sz=15&amp;ie=UTF8&amp;ll=45.053454,-92.809024&amp;spn=0.026831,0.066047" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+					</div>
+
+					<a href="#final" style="position: absolute; bottom:0;right:0;background: #000; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; height: 25px;">
+						Click Here to Simulate the QR Code
+					</a>
+				</span>
+			</span>
+			<span id="final">
+				<h2>Heres the final step. </h2>
+				<p> Go out to the platform in the middle of the prairie. <br> A Surprise Awaits you</p>
+
+				<a href="#iloveyou" style="position: absolute; bottom:0;right:0;background: #000; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; height: 25px;">
+					Click Here to Simulate the QR Code
+				</a>
+			</span>
+			
+			<span id="iloveyou">
+				<h1>Happy Anniversery Cassidy Morgan Babcock.<h1>
+				<h1>I Love You</h1>
+				<h2>I Sincerely Want to thank you with all of my heart for the last 3 years. They have been absolutly amazing, all because of you. I would not have it any other way. I love you so much cassidy. I cant wait to be home for the summer and be able to see you more. I am sorry that it has been hard this year. I love you cassidy.</h2>
+			</span>
+		</div>
+		
+		
+		
+	</body>
+
+</html>

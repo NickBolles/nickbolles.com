@@ -1,0 +1,7 @@
+<header  class="header center-wrapper" style="{{#each hStyle}}{{@key}}:{{this}}{{/each}}"> 
+    <a href="javascript:void(0)" class="button-left" onclick="{{lBtnAction}}"><div class="center-wrapper fill-client"><div class="center-vert"><i class="fa {{lBtn}}"  style="{{#each btnStyle}}{{@key}}:{{this}}{{/each}}"></i></div></div></a>
+    <div class="center-vert"><h1 style="{{#each tStyle}}{{@key}}:{{this}}{{/each}}" data-back="{{back}}">{{title}}</h1></div>
+    <a href="javascript:void(0)" class="button-right" onclick="{{rBtnAction}}"><div class="center-wrapper fill-client"><div class="center-vert"><i class="fa {{rBtn}}"  style="{{#each btnStyle}}{{@key}}:{{this}}{{/each}}"></i></div></div></a>
+    <!--<div id="headerBorder"></div>-->
+    <div id="headerShadow"></div>
+</header> 

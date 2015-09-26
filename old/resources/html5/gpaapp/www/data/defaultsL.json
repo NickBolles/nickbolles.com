@@ -1,0 +1,18 @@
+{
+    "launchNum":"0",
+    "lastLaunch": "0", 
+    "theme":{
+            "background-color":""
+    },
+    "loginPage":{
+        "registerURL": "http://localhost:8080/signup", 
+        "loginURL": "http://localhost:8080/login"
+    },
+    "data":{
+        "syncURL": "http://localhost:8080/gpabot/syncuserdata",
+        "dataURL": "http://localhost:8080/gpabot/userdata"
+        
+    }
+    
+        
+}

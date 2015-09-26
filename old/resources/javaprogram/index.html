@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nicks Website</title>
+
+    <link REL="SHORTCUT ICON" HREF="../../img/logo.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css">
+    <style>
+        body{
+            position:absolute;
+            overflow-y:scroll;
+            height:100%;
+            width:100%;
+
+        }
+        #MyProgram-java{
+            width:100%;
+            height:100%;
+        }
+        #scrollTable{
+            width:100%;
+            height:100%;
+            position:absolute;
+        }
+        .section{
+            width:100%;
+        }
+        #navpane{
+            z-index:500;
+        }
+
+    </style>
+    <script type='text/javascript' src="../../js/jquery-2.0.2.min.js"></script>
+    <script type='text/javascript' src="../../js/jquery-ui-1.10.4.custom.js"></script>
+    <script type='text/javascript' src="../../js/jquery.scrollTo.js"></script>
+    <script>
+        var currentPane="#Home";
+        var duration;
+        var easingEffect='easeOutBack';
+        $(document).ready(function(){
+
+
+            //Set a function for after scroll end
+            $(window).scroll(function(){
+                try{
+                    clearTimeout(yfTime);
+                }catch(err){};
+                yfTime=setTimeout("getCurrentPane()",500);
+                //**********Snap to pane, Not Needed, Replaced with Overflow:hidden;
+                //yfTime=setTimeout("$(this).snapToPane()",500);
+            });
+
+
+            //Annimate and fade in the Navpane
+            $('#navpane').delay(1500).animate({top:'+=60px'},3000).dequeue().fadeIn(1250);
+
+            //Bind all links to do a smooth scroll to the 'href'
+            $('a').bind('click',function(event){
+                var href=$(this).attr('href');
+                $('html, body').stop(true,false);
+                checkEasing(href);
+                $.scrollTo(href,duration, {easing:easingEffect});
+                event.preventDefault();
+                /*
+                 if you want to use one of the easing effects:
+                 $('html, body').stop().animate({
+                 scrollLeft: $($anchor.attr('href')).offset().left
+                 }, 1500,'easeInOutExpo');
+
+                 $('html, body').stop().animate({
+                 scrollTop: $($anchor.attr('href')).offset().top
+                 }, 1500);
+                 $('html, body').animate({
+                 scrollLeft: $($anchor.attr('href')).offset().left
+                 }, 1500);
+
+                 */
+            });
+        });
+        //This function allows for different easing and duration to each ID
+        function checkEasing(href){
+            //Default to EaseOutBack, unless the target is '#Home' or '#Contact'
+            easingEffect='easeOutBack';
+            duration=1000;
+            if (href==='#Home' || href==='#Contact'){
+                //Bounce doesnt glitch because it does not go beyond target
+                easingEffect='easeOutQuart';
+                duration=1500;
+            }
+
+        };
+
+    </script>
+</head>
+<body>
+    <div id="navpane" style="display:none;">
+        <ul class="nav">
+            <li><a href="../../../src/index.html#Home" ><div  class="centerVert"></div>Home</a></li>
+
+            <li><a href="../../../src/index.html#MyProgram">My Program</a></li>
+
+            <li><a href="../../../src/index.html#AboutMe"><div class="centerVert"></div>About Me</a></li>
+
+            <li><a href="../../../src/index.html#Contact">Contact Me</a></li>
+        </ul>
+
+    </div>
+    <div id="topSpacer"></div>
+
+    <table id="scrollTable">
+        <tr>
+            <td id="MyProgram-java" class="section" >
+                <h1>My Program</h1>
+                <p>
+                    This is my grade analyzing program. I am in the process of creating it, and I will keep this site up to date with my progress.
+                    <br>
+                    <br>
+                    My Program is currently coded in Java, which can only be run on any computer regardless of Operating System, as long as <a href="http://www.Java.com" target="_blank">Java</a> is installed. I am planning on making an IOS, Android and Windows Phone 8 Apps out of the program once I complete the Java version.
+                </p>
+                <h3>Some Features of My Program:</h3>
+                <ul>
+                    <li>Add Multiple Terms and Courses</li>
+                    <li>Add Multiple Assignments Easily for Each Course</li>
+                    <li>Simple Adding and Removing of Assignments</li>
+                    <li>Detailed Breakdown of the Effects of Every Course, Assignment, and Point on your GPA</li>
+                    <li>Multiple GPA Scale Support</li>
+                    <li>Multiple Term Type Support</li>
+                    <li>Multiple Profile Support</li>
+                </ul>
+                <br>
+                <h3>Possible Future Features</h3>
+                <ul>
+                    <li>Password Protection via Web-Based Login</li>
+                    <li>Cloud Storage for Access Anywhere</li>
+                    <li>HTML 5 Version for Access through Browser</li>
+                    <li>Mobile Apps</li>
+                    <li>Detailed Graphs of the Impact of Each Possible Score on an Assignment</li>
+                </ul>
+                <br>
+                <br>
+                <p>Also if you have any issues with opening the program please download the latest version of Java from <a href="http://java.com/en/download/" target="_blank">Java.com/en/download</a> or email me at <a href="mailto:Bollesnj07@uww.edu">Bollesnj07@uww.edu</a></p>
+                <br>
+                <h3>Executable JAR</h3>
+                <table class="downloadTable">
+                    <th>Name</th>
+                    <th>Version</th>
+                    <th>Date</th>
+                    <th>Link</th>
+                    <tr>
+                        <td>GPA Bot </td>
+                        <td>V 0.1</td>
+                        <td>Feb. 26 2014</td>
+                        <td>
+                            <a class="downloadlink"  href="files/GPA Bot v0.1.jar"><div class="download">Download</div></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GPA Bot </td>
+                        <td>V 0.2</td>
+                        <td>March 15 2014</td>
+                        <td>
+                            <a href="files/GPA Bot v0.2.jar" class="downloadlink" ><div class="download" >Download</div></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GPA Bot </td>
+                        <td>V 0.3</td>
+                        <td>April 4 2014</td>
+                        <td>
+                            <a href="files/GPA Bot v0.3.jar" class="downloadlink" ><div class="download" >Download</div></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GPA Bot </td>
+                        <td>V 0.4</td>
+                        <td>April 17 2014</td>
+                        <td>
+                            <a href="files/GPA Bot v0.4.jar" class="downloadlink" ><div class="download" >Download</div></a>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <p>Please keep in mind that the source code is pretty sloppy, and I have learned a lot about the conventions of coding and how to keep code organized during this program, so any future programs will be much more organized</p>
+                <br>
+                <h3>Source Code</h3>
+                <table class="downloadTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Link</th>
+                    </tr>
+                    <tr>
+                        <td>NetBeansProject.zip</td>
+                        <td>V 0.1</td>
+                        <td>Feb. 26 2014</td>
+                        <td>
+                            <a class="downloadlink" href="files/NetBeans Project v0.1.zip"><div class="download">Download</div></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NetBeansProject.zip</td>
+                        <td>V 0.2</td>
+                        <td>March 15 2014</td>
+                        <td>
+                            <a class="downloadlink"  href="files/NetBeans Project v0.2.zip"><div class="download">Download</div></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NetBeansProject.zip</td>
+                        <td>V 0.3</td>
+                        <td>April 4 2014</td>
+                        <td>
+                            <a class="downloadlink"  href="files/NetBeans Project v0.3.zip"><div class="download">Download</div></a>
+                        </td>
+                    </tr>
+                </table>
+                <div class="bottomspacer" ></div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+#loginpage{
+    width:100%;
+    height: 100%;
+}
+
+#loginformdiv,#registerformdiv{
+    display:none;
+}
+#loginformdiv input.wide ,#registerformdiv input.wide{
+    width: 80%;
+}
+#startmessage{
+    vertical-align: middle;
+}

@@ -1,0 +1,294 @@
+{
+  "terms": [
+    {
+      "termName": "TermName0",
+      "termSDate": 1223234,
+      "termEDate": 827834,
+      "termType": "semester",
+      "termId": "140A6012-142F-4D01-B2E2-05A6C7B5C8E6",
+      "dateModified": 1408324930,
+      "courses": [
+        {
+          "courseName": "course0",
+          "instructor": "mrs. k",
+          "credits": 3,
+          "tPts": 50,
+          "courseId": "E2AFD214-0450-4D06-A126-8C6212F1BAC9",
+          "dateModified": 1408324930,
+          "assigns": [
+            {
+              "assignName": "assignment0",
+              "assignId": "1ECE65AD-67DA-4520-8928-17E76735A8B0",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "9087FB82-CF6E-4421-8BD9-45F06B9943C8",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "51F0CD3A-0741-432E-A5D2-A191592D777B",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "72845AD8-776A-4A49-BEA7-C769985E982A",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "16B2D7F9-CE32-4050-BA25-C89ACC8B44EC",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            }
+          ]
+        },
+        {
+          "courseName": "course0",
+          "instructor": "mrs. k",
+          "credits": 3,
+          "tPts": 50,
+          "courseId": "E76E67FD-77AA-4506-B7AB-444C60F92A58",
+          "dateModified": 1408324930,
+          "assigns": [
+            {
+              "assignName": "assignment0",
+              "assignId": "B0ACA5A7-7ACA-4875-B4BC-1D7CBC8AAAE6",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "9BE0401F-467E-437C-A675-32DFE83041D6",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "E5AD75AC-0CBE-430E-91FF-3D72EF5EB246",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "A39F39CB-8396-46AA-81B9-32F7363750AD",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "59A6EA3D-1B82-484D-AFA1-6AB840A24961",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            }
+          ]
+        },
+        {
+          "courseName": "course0",
+          "instructor": "mrs. k",
+          "credits": 3,
+          "tPts": 50,
+          "courseId": "A87D9372-E716-4A5A-89AD-9ACADB269055",
+          "dateModified": 1408324930,
+          "assigns": [
+            {
+              "assignName": "assignment0",
+              "assignId": "659B0B89-262A-49AA-BF7A-7E8AF95A067D",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "1A443318-7357-4E87-A2CB-065D99E3BA99",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "919A1B6D-36C4-4832-914F-B424804ABEDB",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "239D7C27-40D1-4E2B-A4CF-5CDEF01F2900",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "F5C5E8E0-6021-427F-A09A-C4ABA4219A8E",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            }
+          ]
+        },
+        {
+          "courseName": "course0",
+          "instructor": "mrs. k",
+          "credits": 3,
+          "tPts": 50,
+          "courseId": "29991B44-B00B-4CAF-A23E-A62C2D9D5A0B",
+          "dateModified": 1408324930,
+          "assigns": [
+            {
+              "assignName": "assignment0",
+              "assignId": "5DBAD8A0-D740-4455-A38D-0AF823E089A4",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "9F47D8AA-C734-472F-8BA4-99D18D70B0ED",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "31EBC162-6196-4566-B5E2-FF0F3C926FEB",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "DA6DA88E-6A90-47CC-B424-2034A3E4246B",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "A856BA3C-51E7-4D57-941D-7DE198AABA31",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            }
+          ]
+        },
+        {
+          "courseName": "course0",
+          "instructor": "mrs. k",
+          "credits": 3,
+          "tPts": 50,
+          "courseId": "F1C491F0-8593-4F8D-ADA8-DB2FAB599D58",
+          "dateModified": 1408324930,
+          "assigns": [
+            {
+              "assignName": "assignment0",
+              "assignId": "BF85AEEC-6682-4895-A66A-673549051E63",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "5ED5035A-6764-4AB6-956E-4CD1F2F92EB2",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "BB390176-BE77-42A5-A6C3-59A2A869DFCE",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "C9691824-333F-432E-9FCD-9616FE454119",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            },
+            {
+              "assignName": "assignment0",
+              "assignId": "F4A56DB3-F4CA-4142-A094-2222FF51F4DB",
+              "duedate": "Sun Aug 17 2014 20:22:10 GMT-0500 (Central Daylight Time)0",
+              "pts": 0,
+              "score": 0,
+              "dateModified": 1408324930,
+              "notes": "this is an assignment"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "header": {
+    "title": "Welcome!",
+    "leftButton": "listview",
+    "rightButton": "user"
+  }
+}

@@ -1,0 +1,18 @@
+.nb-web-locations {
+  min-width: 450px;
+  width: 60%; }
+  .nb-web-locations a {
+    margin: 4px;
+    height: 100px; }
+    .nb-web-locations a img {
+      height: 100px; }
+
+.nb-resume-button {
+  border-radius: 0;
+  height: 92px !important;
+  font-size: 78px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 16px; }
+
+/*# sourceMappingURL=../modules/about.css.map */

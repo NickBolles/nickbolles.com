@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+
+<!--
+
+    Setup LocalStorage saving. be able to save
+        different Background Transitions
+        currentSong
+        menu color
+        menu position
+
+
+
+
+
+
+Play
+
+
+-->
+
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />     
+        <link rel="stylesheet" type="text/css" href="css/startPage.css" />
+        <link rel="stylesheet" type="text/css" href="css/mainPage.css" />  
+        <!--<link rel="stylesheet" type="text/css" href="css/lib/icomatic/icomatic.css" />-->
+        <link rel="stylesheet" type="text/css" href="css/lib/font-awesome/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/lib/topcoat/topcoat-mobile-light.css" />
+        <link rel="stylesheet" type="text/css" href="css/lib/animate.css" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div id="menu" class="menutrigger">
+            <header>
+                <h3 style="display:inline;">Menu</h3>
+                <a href="javascript:void(0)" onClick="app.pageTransition(null,'#settings-page');" style="float:right; margin-right:1%; "><span class="icomatic white">settings</span> </a>
+            </header>
+            <div id="menuContent">
+                <ul class="topcoat-list">
+                    <li class="topcoat-list__item"><a href="javascript:void(0);" onclick="localStorage.clear();">Clear Storage</a></li>
+                    </ul>
+            </div>
+        </div>
+        <div id="menutrigger" class="menutrigger"></div>
+        
+        <div id="app">
+            
+        </div>
+            <script id='main-page' type="text/x-handlebars-template">
+                  
+                
+            
+                
+            
+            <div id="settings-page" class="disabledPage">
+                <h1>THIS IS THE SETTINGS PAGE</h1>
+            </div>
+            </script>
+        <script src="phonegap.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-2.1.1.js"> </script>
+        <script type="text/javascript" src="js/libs/Math.uuid.js"></script>
+        <script type="text/javascript" src="js/libs/hammer.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.hammer.js"></script>
+        <script type="text/javascript" src="js/libs/handlebars-v1.3.0.js"></script>
+        <script type="text/javascript" src="js/libs/template-loader.js"></script>
+        <script type="text/javascript" src="js/libs/moment.js"></script>
+        <script type="text/javascript" src="js/libs/iscroll.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/loginPage.js"></script>
+        <script type="text/javascript" src="js/mainPage.js"></script>
+        <script type="text/javascript" src="js/termPage.js"></script>
+        <script type="text/javascript" src="js/coursePage.js"></script>
+        <script type="text/javascript" src="js/assignPage.js"></script>
+        <script type="text/javascript" src="js/user.js"></script>
+        <script type="text/javascript" src="js/data.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script type="text/javascript" src="js/libs/sha512.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
