@@ -47,6 +47,7 @@
     "gulp-uglify": "^1.4.1",
     "gulp-util": "^3.0.6",
     "handlebars": "2.0.x",
+    "jshint-summary": "^0.4.0",
     "lodash": "^3.10.1",
     "merge-stream": "^1.0.0",
     "method-override": "^2.3.5",

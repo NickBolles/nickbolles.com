@@ -6,7 +6,7 @@ var express         = require('express'),
     bodyParser      = require('body-parser'),
     cookieParser    = require('cookie-parser'),
     serveStatic     = require('serve-static'),
-	cors 			= require('cors');
+	  cors 			      = require('cors');
     //initialize express
     var app = module.exports = express();
 
@@ -24,7 +24,7 @@ app.locals.pretty = true;
     app.use(bodyParser.json({ type: 'text/json', limit: '5mb' }));
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(cookieParser());
-    app.use(serveStatic('./public'));
+    app.use(serveStatic(__dirname + '/public'));
 
 
 app.use(session({
