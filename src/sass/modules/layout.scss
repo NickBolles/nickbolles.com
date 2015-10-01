@@ -90,7 +90,7 @@ a{
     color:white;
 }
 p, .nb-text{
-    font-size:25px;
+    font-size:16px;
 }
 li{
     font-size:25px;
@@ -196,4 +196,14 @@ ul, li{
         -webkit-margin-end: 0;
         -webkit-padding-start: 0;
     }
+}
+
+@for $i from 1 through 4 {
+    .nb-flex-#{$i} {
+        flex-grow: $i !important;
+    }
+}
+
+.nb-hide{
+    display:none;
 }
