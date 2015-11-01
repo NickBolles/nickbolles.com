@@ -2,9 +2,6 @@
  * Created by Nicholas on 9/15/2015.
  */
 
-//Require Libs
-//var libs = require('./libs/');
-//var content = require('./content.js');
 $(document).ready(scrollMagicSetup);
 function scrollMagicSetup(){
   var scroller = new ScrollMagic.Controller({vertical:false});
@@ -38,6 +35,41 @@ function scrollMagicSetup(){
   });
 }
 
+
+$(document).ready(mobileAlertSetup);
+function mobileAlertSetup(){
+  window.nbIsMobile = false;
+  if ($('#mobile-alert').css('display').toLowerCase() !== 'none'){
+    window.nbIsMobile = true;
+  }
+  $('#mobile-alert .nb-button').click(hideMobileAlert);
+  return window.nbIsMobile;
+}
+function hideMobileAlert(){
+  $('#mobile-alert').hide();
+  //Fire off the main section animations now
+  nbAnimate();
+}
+
+$(document).ready(nbTabsSetup);
+function nbTabsSetup(){
+  $('.nb-tabs').each(function(parent){
+    parent = $(parent);
+    var tabbar = $('<div class="nb-tab-bar"/>');
+    parent.prepend(tabbar);
+    var tabs = parent.find('.nb-tab');
+    tabs.each(function(tab){
+      tab = $(tab);
+      var label = $('<div>tab.data().label</div>');
+      label.click(showTab.bind(tab));
+      tabbar.append();
+    });
+    function showTab(){
+      tabs.slideUp();
+      this.slideDown();
+    }
+  });
+}
 
 var currentPane="#Home";
 var duration;
@@ -85,11 +117,11 @@ function nbAnimate(){
       //fromCss = $.extend(defaults, fromCss);
       options.always = animationComplete;
       thisEl
-          .css(fromCss)
-          .delay(options.delay)
-          .css(defaults)
-          .animate(toCss, options);
-
+          .css(fromCss);
+      setTimeout(function(){
+        thisEl.css(defaults)
+            .animate(toCss, options);
+      }, options.delay);
 
       function animationComplete(){
         $(this).css({
@@ -100,7 +132,7 @@ function nbAnimate(){
           '-o-transform': 'none'
         });
       }
-    })
+    });
   }
 }
 
@@ -157,10 +189,10 @@ function updateOverflow(paneNum){
   }else{
     //Default to Hidden Overflow
     if ($("body").css('overflow-y') === 'scroll'){
-      $("body").css("overflow-y", "hidden").dequeue().scrollTo('+=30px',0, {axis:'x'});;
+      $("body").css("overflow-y", "hidden").dequeue().scrollTo('+=30px',0, {axis:'x'});
     }
   }
-};
+}
 
 //This function allows for different easing and duration to each ID
 function checkEasing(href){
@@ -172,17 +204,4 @@ function checkEasing(href){
     easingEffect='easeOutQuart';
     duration=1500;
   }
-};
-
-$(document).ready(mobileAlertSetup);
-function mobileAlertSetup(){
-  if ($('#mobile-alert').css('display').toLowerCase() === 'none'){
-    window.nbIsMobile = true;
-  }
-  $('#mobile-alert .nb-button').click(hideMobileAlert);
-}
-function hideMobileAlert(){
-  $('#mobile-alert').hide();
-  //Fire off the main section animations now
-  nbAnimate();
 }
