@@ -27,8 +27,8 @@ body{
     height:100%;
     width: 100%;
     background-color: #E5E5E5;
-    background: linear-gradient(#f5f5f5, #7d7d7d);
-    color: black;;
+    background: linear-gradient(#1d1d1d, #3b3b3b);
+    color: white;
     position: fixed;
     z-index: 100;
     @include respond-to('pc'){
@@ -38,11 +38,11 @@ body{
         display: none;
     }
     .mobile-alert-content{
-        padding-top: 128px;
+        padding:32px;
         font-size: 32px !important;
         .nb-button{
             font-size: 48px;
-            padding: 10px;
+            padding: 16px;
         }
     }
 }
