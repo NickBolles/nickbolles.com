@@ -5,20 +5,21 @@
   Setup Mobile alert
  */
 
-$(document).ready(mobileAlertSetup);
-window.nbIsMobile = false;
-function mobileAlertSetup(){
-  window.nbIsMobile = false;
-  if ($('#mobile-alert').css('display').toLowerCase() !== 'none'){
-    window.nbIsMobile = true;
-  }
-  $('#mobile-alert .nb-button').click(function hideMobileAlert(){
-    $('#mobile-alert').hide();
-    //Fire off the main section animations now
-    nbAnimate(null,true);
-  });
-  return window.nbIsMobile;
-}
+//$(document).ready(mobileAlertSetup);
+//$(window).resize(mobileAlertSetup);
+//window.nbIsMobile = false;
+//function mobileAlertSetup(){
+//  window.nbIsMobile = false;
+//  if ($('#mobile-alert').css('display').toLowerCase() !== 'none'){
+//    window.nbIsMobile = true;
+//  }
+//  $('#mobile-alert .nb-button').click(function hideMobileAlert(){
+//    $('#mobile-alert').hide();
+//    //Fire off the main section animations now
+//    nbAnimate(null,true);
+//  });
+//  return window.nbIsMobile;
+//}
 
 /*
   Setup nbTabs
