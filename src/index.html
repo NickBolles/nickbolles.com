@@ -54,29 +54,29 @@
     <tr>
         <td id="home" class="nb-section">
             <div id="homecontent">
-                <div class="nb-welcome-pane">
-                    <div class="nb-half nb-float">
-                        <div class="nb-horiz-spacer"></div>
-                        <h1 class="nb-huge nb-no-margin"
+                <div class="nb-welcome-pane" layout="row" layout-lt-md="column">
+                    <div flex="100" flex-gt-md="50" flex-order="2" flex-order-gt-md="1">
+                        <div class="nb-horiz-spacer" hide show-gt-md></div>
+                        <h1 class="nb-huge nb-no-margin" style="font-size:90px"
                             data-nb-animate-options='{"duration": "1000", "delay": "1500"}'
                             data-nb-animate-from='{"left": "-60px", "opacity": "0"}'
                             data-nb-animate-to='{"left": "0", "opacity": "1"}'>
                             Hey There!
                         </h1>
-                        <div class="nb-horiz-spacer nb-small"></div>
+                        <div class="nb-horiz-spacer nb-small" hide show-gt-md></div>
                         <h1 class="nb-big nb-no-margin"
                             data-nb-animate-options='{"duration": "750", "delay": "2500", "easing": "easeOutBack"}'
                             data-nb-animate-from='{"bottom": "-40px", "opacity": "0", "transform": "scale(0)"}'
                             data-nb-animate-to='{"bottom": "0", "opacity": "1", "transform": "scale(1)"}'>
                             I'm Nick
                         </h1>
-                        <div class="nb-horiz-spacer nb-big"></div>
+                        <div class="nb-horiz-spacer nb-big" hide show-gt-md></div>
                         <div class="nb-text"
                              data-nb-animate-options='{"duration": "1500", "delay": "4750"}'
                              data-nb-animate-from='{"opacity": "0"}'
                              data-nb-animate-to='{"opacity": "1"}'>
-                            <p style="font-size: 20px;">I'm a college student, technology lover, son, brother, friend and more...</p>
-                            <div class="nb-horiz-spacer nb-big"></div>
+                            <p style="font-size: 20px;" class="nb-no-margin">I'm a college student, technology lover, son, brother, friend and more...</p>
+                            <div class="nb-horiz-spacer nb-big" hide show-gt-md></div>
                             <div class="nb-button nb-arrow"
                                  data-nb-animate-options='{"duration": "1500", "delay": "4750"}'
                                  data-nb-animate-from='{"opacity": "0"}'
@@ -89,11 +89,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="nb-half nb-float nb-right"
-                         data-nb-animate-options='{"duration": "1000", "delay": "1500"}'
+                    <div data-nb-animate-options='{"duration": "1000", "delay": "1500"}'
                          data-nb-animate-from='{"left": "40px", "opacity": "0"}'
-                         data-nb-animate-to='{"left": "0", "opacity": "1"}'>
-                        <div class="nb-horiz-spacer nb-big"></div>
+                         data-nb-animate-to='{"left": "0", "opacity": "1"}'
+                         flex="100" flex-gt-md="50" flex-order="1" flex-order-gt-md="2">
+                        <div class="nb-horiz-spacer nb-big" hide show-gt-md></div>
                         <div class="shadow nb-main-pic" style="overflow: hidden;border-radius:10%;">
                             <img  style="width:130%;" src="img/main.jpg" />
                         </div>
@@ -270,9 +270,9 @@
                                                     When a request comes in on port 80 the server-router, a NodeJS Instance of <a href="https://github.com/encharm/http-master">http-master</a>, routes the request based on the domain, sub-domain and path of the request to a certain port.
                                                 </p>
                                                 <ul>
-                                                    <li>First, a Git "Server Repository" that contains multiple Git sub-modules (for example nickbolles.com), which is then cloned to the server.</li>
-                                                    <li>Second, running the "setup" script will install NodeJS (via <a href="https://github.com/creationix/nvm">nvm</a>), and all npm modules needed, then it will create a Forever-Service out of a "start-servers.js" file</li>
-                                                    <li>When the "start-servers.js" Forever-Service starts, it will read all of the Git sub-modules, start them, and read their package.json for the settings that they require for the server-router</li>
+                                                    <li>First, a Git "Server Repository" contains multiple Git sub-modules (for example nickbolles.com)</li>
+                                                    <li>Second, running the "setup" script will install NodeJS (via <a href="https://github.com/creationix/nvm">nvm</a>), and all npm modules needed. Then it will create a <a href="https://github.com/zapty/forever-service">Forever-Service</a> out of a "start-servers.js" file to keep the servers running as a service</li>
+                                                    <li>When the "start-servers.js" Forever-Service starts, it will read all of the Git sub-modules, start them, and read their package.json for the routes that they require for the server-router</li>
                                                     <li>Then the "start-servers.js" script will create the http-master config file, allowing the server-router to dynamically allocate routes for the sub-modules currently included</li>
                                                     <li>After creating the config file for the server-router the "start-servers.js" script starts the router, and everything should be running and accessible!</li>
                                                 </ul>

@@ -189,6 +189,10 @@ ul{
 .nb-main-pic{
     margin-left: 64px;
     margin-bottom: 16px;
+    @include respond-to('phone'){
+        margin: 8px;
+    }
+    z-index: 10;
 }
 
 ul, li{
