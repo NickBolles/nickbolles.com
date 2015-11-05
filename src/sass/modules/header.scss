@@ -12,6 +12,7 @@ $navpane-height: 50px;
     margin-left: -($navpane-width/2);
     width:$navpane-width;
     height:$navpane-height;
+    z-index: 101;
     @include no-user-select();
     ul{
         width: 100%;

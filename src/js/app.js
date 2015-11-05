@@ -54,12 +54,8 @@ $(document).ready(nbAnimate);
 var toAnimate = [];
 function nbAnimate(e, force){
   var doAnimate = false;
-  if (window.nbAnimated){
-    return;
-  }
   if (!window.nbIsMobile || force){
     doAnimate =true;
-    window.nbAnimated = true;
     if (toAnimate.length >0){
       while(toAnimate.length>0){
         animate(toAnimate.pop());
