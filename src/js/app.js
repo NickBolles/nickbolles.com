@@ -1,40 +1,9 @@
 /**
  * Created by Nicholas on 9/15/2015.
  */
-
-$(document).ready(scrollMagicSetup);
-function scrollMagicSetup(){
-  var scroller = new ScrollMagic.Controller({vertical:false});
-  $('.nb-section').each(function () {
-    var scene = new ScrollMagic.Scene({
-      triggerElement: this,
-      duration:       0,
-      triggerHook:    "onCenter"
-    }).addTo(scroller);
-
-    // use a function to automatically adjust the duration to the window height.
-    var durationValueCache;
-    function getDuration () {
-      return durationValueCache;
-    }
-    function updateDuration (e) {
-      durationValueCache = window.innerWidth;
-    }
-    $(window).on("resize", updateDuration); // update the duration when the window size changes
-    $(window).triggerHandler("resize"); // set to initial value
-    scene.duration(getDuration); // supply duration method
-
-
-    //update the .nb-active-section class to this target
-    scene.on("start", function(event){
-      if (!$('.nb-animating-to').length){
-        $('.nb-active-section').removeClass('nb-active-section');
-        $(event.target.triggerElement()).addClass('nb-active-section nb-visited-section');
-      }
-    });
-  });
-}
-
+/*
+  Setup Mobile alert
+ */
 
 $(document).ready(mobileAlertSetup);
 window.nbIsMobile = false;
@@ -51,6 +20,9 @@ function mobileAlertSetup(){
   return window.nbIsMobile;
 }
 
+/*
+  Setup nbTabs
+ */
 $(document).ready(nbTabsSetup);
 function nbTabsSetup(){
   $('.nb-tabs').each(function(parent){
@@ -71,17 +43,10 @@ function nbTabsSetup(){
   });
 }
 
-var currentPane="#Home";
-var duration;
-var easingEffect='easeOutBack';
-//Hide the navpane right away
-$(document).ready(animateNavPaneIn);
-function animateNavPaneIn(){
-  $('#navpane')
-      .css({'display': 'none', 'top': '-60px'})
-      //Animate and fade in the Navpane
-      .delay(1500).animate({top:'0px'},3000).dequeue().fadeIn(1250);
-}
+
+/*
+Setup nbAnimate Elements
+ */
 
 $(document).ready(nbAnimate);
 //Should probably move this over to a GSAP timeline, but it works well for now
@@ -162,6 +127,23 @@ function nbAnimate(e, force){
   }
 }
 
+/*
+  Setup Nav Pane animation
+ */
+var duration;
+var easingEffect='easeOutBack';
+//Hide the navpane right away
+$(document).ready(animateNavPaneIn);
+function animateNavPaneIn(){
+  $('#navpane')
+      .css({'display': 'none', 'top': '-60px'})
+    //Animate and fade in the Navpane
+      .delay(1500).animate({top:'0px'},3000).dequeue().fadeIn(1250);
+}
+
+/*
+  Setup smooth scroll on click
+ */
 $(document).ready(function(){
   //Set a function for after scroll end
   var debouncedScroll;
@@ -230,4 +212,40 @@ function checkEasing(href){
     easingEffect='easeOutQuart';
     duration=1500;
   }
+}
+
+/*
+  Setup Scroll Effects
+ */
+$(document).ready(scrollMagicSetup);
+function scrollMagicSetup(){
+  var scroller = new ScrollMagic.Controller({vertical:false});
+  $('.nb-section').each(function () {
+    var scene = new ScrollMagic.Scene({
+      triggerElement: this,
+      duration:       0,
+      triggerHook:    "onCenter"
+    }).addTo(scroller);
+
+    // use a function to automatically adjust the duration to the window height.
+    var durationValueCache;
+    function getDuration () {
+      return durationValueCache;
+    }
+    function updateDuration (e) {
+      durationValueCache = window.innerWidth;
+    }
+    $(window).on("resize", updateDuration); // update the duration when the window size changes
+    $(window).triggerHandler("resize"); // set to initial value
+    scene.duration(getDuration); // supply duration method
+
+
+    //update the .nb-active-section class to this target
+    scene.on("start", function(event){
+      if (!$('.nb-animating-to').length){
+        $('.nb-active-section').removeClass('nb-active-section');
+        $(event.target.triggerElement()).addClass('nb-active-section nb-visited-section');
+      }
+    });
+  });
 }
