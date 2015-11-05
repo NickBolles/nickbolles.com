@@ -37,18 +37,18 @@ function scrollMagicSetup(){
 
 
 $(document).ready(mobileAlertSetup);
+window.nbIsMobile = false;
 function mobileAlertSetup(){
   window.nbIsMobile = false;
   if ($('#mobile-alert').css('display').toLowerCase() !== 'none'){
     window.nbIsMobile = true;
   }
-  $('#mobile-alert .nb-button').click(hideMobileAlert);
+  $('#mobile-alert .nb-button').click(function hideMobileAlert(){
+    $('#mobile-alert').hide();
+    //Fire off the main section animations now
+    nbAnimate(null,true);
+  });
   return window.nbIsMobile;
-}
-function hideMobileAlert(){
-  $('#mobile-alert').hide();
-  //Fire off the main section animations now
-  nbAnimate();
 }
 
 $(document).ready(nbTabsSetup);
@@ -85,54 +85,80 @@ function animateNavPaneIn(){
 
 $(document).ready(nbAnimate);
 //Should probably move this over to a GSAP timeline, but it works well for now
-function nbAnimate(){
-  if (!window.nbIsMobile){
-    $('[data-nb-animate-from]').each(function(idx){
-      var thisEl  = $(this);
-      var options = thisEl.data('nb-animate-options');
-      options = $.extend({duration: 400, delay: 0, easing: 'swing'}, options);
-      var fromCss = thisEl.data('nb-animate-from') || {};
-      var toCss   = thisEl.data('nb-animate-to') || {'opacity': 1, 'display': 'auto'};
-      var defaults = {
-        position:'relative',
-        transition: 'transform ' + options.duration + 'ms',
-        '-webkit-transition': 'transform ' + options.duration + 'ms',
-        '-moz-transition': 'transform ' + options.duration + 'ms',
-        '-ms-transition': 'transform ' + options.duration + 'ms',
-        '-o-transition': 'transform ' + options.duration + 'ms'
-      };
-      if (fromCss.transform){
-        var transform = fromCss.transform;
-        var vendTransform = {
-          transform: transform,
-          '-webkit-transform': transform,
-          '-moz-transform': transform,
-          '-ms-transform': transform,
-          '-o-transform': transform
-        };
-        $.extend(fromCss, vendTransform);
+var toAnimate = [];
+function nbAnimate(e, force){
+  var doAnimate = false;
+  if (window.nbAnimated){
+    return;
+  }
+  if (!window.nbIsMobile || force){
+    doAnimate =true;
+    window.nbAnimated = true;
+    if (toAnimate.length >0){
+      while(toAnimate.length>0){
+        animate(toAnimate.pop());
       }
+      return;
+    }
+  }
+
+  $('[data-nb-animate-from]').each(function(idx){
+    var thisEl  = $(this);
+    var animation = {thisEl: thisEl};
+    animation.options = thisEl.data('nb-animate-options');
+    animation.options = $.extend({duration: 400, delay: 0, easing: 'swing'}, animation.options);
+    animation.fromCss = thisEl.data('nb-animate-from') || {};
+    animation.toCss   = thisEl.data('nb-animate-to') || {'opacity': 1, 'display': 'auto'};
+    if (animation.fromCss.transform){
       //Setting the default for the transition will mean that the initial fromCss will abide by that timing too
       //This will not be desired if opacity isn't used. This should
       //fromCss = $.extend(defaults, fromCss);
-      options.always = animationComplete;
-      thisEl
-          .css(fromCss);
-      setTimeout(function(){
-        thisEl.css(defaults)
-            .animate(toCss, options);
-      }, options.delay);
+      var transform = animation.fromCss.transform;
+      var vendTransform = {
+        transform: transform,
+        '-webkit-transform': transform,
+        '-moz-transform': transform,
+        '-ms-transform': transform,
+        '-o-transform': transform
+      };
+      $.extend(animation.fromCss, vendTransform);
+    }
+    var defaults = {
+      position:'relative',
+      transition: 'transform ' + animation.options.duration + 'ms',
+      '-webkit-transition': 'transform ' + animation.options.duration + 'ms',
+      '-moz-transition': 'transform ' + animation.options.duration + 'ms',
+      '-ms-transition': 'transform ' + animation.options.duration + 'ms',
+      '-o-transition': 'transform ' + animation.options.duration + 'ms'
+    };
+    animation.defaults = defaults;
+    animation.options.always = animationComplete.bind(thisEl);
 
-      function animationComplete(){
-        $(this).css({
-          transform: 'none',
-          '-webkit-transform': 'none',
-          '-moz-transform': 'none',
-          '-ms-transform': 'none',
-          '-o-transform': 'none'
-        });
-      }
+    //Set the initial css
+    thisEl
+        .css(animation.fromCss);
+    //If we don't want to animate right now add it to a list to do later
+    if (doAnimate){
+      animate(animation)
+    }else{
+      toAnimate.push(animation);
+    }
+  });
+
+  function animationComplete(){
+    $(this).css({
+      transform: 'none',
+      '-webkit-transform': 'none',
+      '-moz-transform': 'none',
+      '-ms-transform': 'none',
+      '-o-transform': 'none'
     });
+  }
+  function animate(animation){
+    setTimeout(function(){
+      animation.thisEl.css(animation.defaults)
+          .animate(animation.toCss, animation.options);
+    }, animation.options.delay);
   }
 }
 
