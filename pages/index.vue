@@ -1,54 +1,71 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <img src="/v.png" alt="Vuetify.js" class="mb-5" />
-      </div>
-      <v-card>
-        <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a href="https://vuetifyjs.com" target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a href="https://github.com/vuetifyjs/vuetify/issues" target="_blank" title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
-          <br>
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank">Nuxt GitHub</a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
+  <v-layout column>
+    <v-layout column class="nb-main-landing">
+      <!-- <v-parallax src="/main-wide-small.jpg" v-bind:height="mainHeight">
+        <v-layout class="nb-main-content-bg">
+          <v-layout column align-center justify-end>
+            <div class="px-4 py-4">
+              <p class="display-4">Hey! I'm Nick</p>
+            </div>
+          </v-layout>
+        </v-layout>
+      </v-parallax> -->
+      <v-layout  v-bind="isMainColumn" align-center>
+        <div class="py-5 px-5">
+          <v-avatar v-bind:size="mainHeight+'px'" >
+                  <img src="/main-square.jpg" alt="">
+          </v-avatar>
+        </div>
+        <v-layout v-bind="isIntroColumn" class="nb-main-summary" align-center>
+          <v-flex>
+            <p class="display-3 px-2 py-2 text-xs-center">
+              Hey! I'm Nick
+            </p>
+            <p class="body-2 px-4 py-3 text-xs-center">
+              I'm a recent grad of UWW interested in anything to do with technology.
+              I'm currently keeping busy planning a wedding, working as a developer at Epic,
+              hanging out with family and friends and working on side projects whenever I have time left over.     
+            </p>
+            <p class="heading text-xs-center">
+              Thanks for checking out my website!
+            </p>
+          </v-flex>
+          <v-container grid-list-L class="nb main links">
+            <v-layout row wrap justify-space-around>
+                <v-btn>About Me</v-btn>
+                <v-btn>My Experiance</v-btn>
+                <v-btn>My Skills</v-btn>
+                <v-btn>My Projects</v-btn>
+                <v-btn>Contact Me</v-btn>
+            </v-layout>
+          </v-container>
+        </v-layout>
+      </v-layout>
+    </v-layout>
   </v-layout>
 </template>
 
 <script lang="ts">
-// import AppLogo from '../components/AppLogo.vue'
-import HelloWorld from '../components/HelloWorld.vue'
-export default {
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
+
+@Component({
   components: {
-    // AppLogo,
-    HelloWorld
   }
+})
+export default class extends Vue {
+  mainHeight = 500;
+  get isIntroColumn(): any {
+        return this.$vuetify.breakpoint.mdAndDown ? {column: true} : {};
+      }
+
+  get isMainColumn(): any {
+        return this.$vuetify.breakpoint.xs ? {column: true} : {};
+      }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
@@ -69,4 +86,21 @@ export default {
 .links {
   padding-top: 15px;
 }
+
+.nb-main-landing {
+  /* height: 100vh */
+}
+
+.nb-main-content-bg {
+  background: linear-gradient(transparent,60%,rgba(48, 48, 48, 0.2),85%,rgba(48, 48, 48, 1));
+  /* counteract padding on the parallax */
+  margin: 0 -14px;
+  margin: 0 -1rem;
+}
+
+.nb.main.links {
+  max-width: 550px;
+}
+
+
 </style>
