@@ -1,11 +1,29 @@
+import { StoreOptions, Module, Store } from "vuex/types";
+import Vue from "vue";
+import VeeValidate from "vee-validate";
 
-export const state = () => ({
-    sidebar: false
-  })
+Vue.use(VeeValidate);
 
-  
-  export const mutations = {
-    toggleSidebar (state) {
-      state.sidebar = !state.sidebar
+
+interface IRootState {
+  loaded: boolean;
+}
+
+export const mutations: any = {
+      setName(state: IRootState, name?: string): void {
+        state.loaded = true;
     }
-  }
+}
+
+export const state: () => StoreOptions<IRootState> = () => ({
+  state: {
+    loaded: false
+  },
+  // modules: {
+  //   ContactInfo
+  // }
+});
+
+// const storeFactory: any = () => new Vuex.Store<IRootState>(store);
+
+// export default storeFactory;
