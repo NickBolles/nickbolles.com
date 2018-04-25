@@ -2,9 +2,11 @@
   eslint no-underscore-dangle: 0, max-len: 0, prefer-destructuring: 0, no-nested-ternary: 0
 */
 
-import TweenMax from "gsap/TweenMax";
-import TimelineMax from "gsap/TimelineMax";
 import * as ScrollWizardry from "scrollwizardry";
+import { TimelineMax, TweenMax } from "gsap";
+
+// let TimelineMax: any = TimelineLite;
+// let TweenMax: any = TweenLite;
 
 const { Controller, Scene } = ScrollWizardry;
 
@@ -308,7 +310,7 @@ const tweenDirective = (sceneManager: any) => {
             scene.timeline = new TimelineMax();
           }
 
-          const tween = TweenMax[method](
+          const tween = (TweenMax as any)[method](
             SceneManager.getTargetElement(el, options.targetElement),
             duration || 1,
             fromVars || toVars,

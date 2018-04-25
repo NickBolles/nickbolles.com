@@ -1,6 +1,6 @@
-let gsap = require("gsap");
-let TweenLite = gsap.TimelineLite;
-let Sine = gsap.Sine;
+// let gsap = require("gsap");
+// let TweenLite = gsap.TimelineLite;
+// let Sine = gsap.Sine;
 module.exports = function (to, from, savedPosition) {
 
     return new Promise(function (resolve, reject) {

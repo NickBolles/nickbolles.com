@@ -1,6 +1,6 @@
 <template>
   <v-layout column align-stretch v-bind:class="loaded ? 'loaded':'loading'" v-resize="onResize">
-    <v-layout column class="nb main landing section application theme--dark" v-bind:style="contentStyle">
+    <v-layout column align-center class="nb main landing section application theme--dark" v-bind:style="contentStyle">
       <div class="pb-5 px-5 nb main avatar">
         <v-avatar v-bind:size="avatarHeight + 'px'" v-parallax="parallaxMult">
           <img src="/main-square.webp" alt="An Awesome Picture of me" v-bind:style="avatarStyle">
