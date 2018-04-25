@@ -131,7 +131,7 @@ export const HTML5: ISkill = {
 export const Jasmine: ISkill = {
     file: "jasmine.svg",
     name: "Jasmine",
-    type: SkillType.Language,
+    type: SkillType.Tool,
     url: "https://jasmine.github.io/"
 };
 export const JS: ISkill = {
