@@ -1,12 +1,10 @@
 <template>
-  <v-container id="myProjects">
-    <v-container grid-list-L px-5>
-      <v-layout row justify-space-around wrap>
-        <v-flex v-for="project in projects" v-bind:key="project.name" xs12 md6>
-          <projectSummary v-bind:project="project"></projectSummary>
-        </v-flex>
-      </v-layout>
-    </v-container>
+  <v-container id="myProjects" grid-list-L px-2>
+    <v-layout row justify-space-around wrap>
+      <v-flex v-for="project in projects" v-bind:key="project.name" xs12 md6>
+        <projectSummary v-bind:project="project"></projectSummary>
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 

@@ -48,7 +48,7 @@ module.exports = {
   vuetify: {
     css: false,
     theme: {
-      primary: '#9c27b0',
+      primary: '#3B8070',
       accent: '#ce93d8',
       secondary: '#424242',
       info: '#0D47A1',
@@ -102,6 +102,10 @@ module.exports = {
   // todo: create static/icon.png
   manifest: {
     name: 'Nick\'s Website',
-    lang: 'en'
+    lang: 'en',
+    theme_color: "#3B8070",
+    background_color: "#303030",
+    description: "Nick Bolles' personal website"
+
   }
 };

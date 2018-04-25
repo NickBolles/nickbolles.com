@@ -30,6 +30,7 @@ import { IProject, newIProject } from "assets/myProjects";
 import { isString } from "assets/TypeGuards";
 import { ISkill, Statuses } from "assets/skills/skills";
 import SkillIconComponent from "~/components/skillIcon.vue";
+import colors from "vuetify/es5/util/colors";
 
 @Component({
   components: {
@@ -55,19 +56,35 @@ export default class ProjectSummaryComponent extends Vue {
   }
 
   statusColor(status: Statuses): string {
-    if (status === Statuses.Completed) {
-      return this.$vuetify.theme.success.toString();
-    } else if (status === Statuses.In_Progress) {
-      return this.$vuetify.theme.warning.toString();
+    if (status === Statuses.Idea) {
+      return colors.deepPurple.darken2;
+      // deep-purple darken-3
     } else if (status === Statuses.Designing) {
-      return this.$vuetify.theme.primary.toString();
-    } else if (status === Statuses.Idea) {
-      return this.$vuetify.theme.secondary.toString();
+      return colors.cyan.darken2;
+      // cyan darken-2
+    } else if (status === Statuses.In_Progress) {
+      return colors.amber.darken2;
+      // amber darken-1
+    } else if (status === Statuses.Completed) {
+      return colors.green.darken3;
+      // green daken 3
+    } else if (status === Statuses.On_The_Back_Burner) {
+      return colors.deepOrange.darken2;
+      // deep-orange darken-3
     } else if (status === Statuses.Obsolete) {
-      return this.$vuetify.theme.info.toString();
+      return colors.blueGrey.base;
+      // blue-grey darken-2
     }
     return "";
   }
+
+  // primary: '#9c27b0',
+  // accent: '#ce93d8',
+  // secondary: '#424242',
+  // info: '#0D47A1',
+  // warning: '#ffb300',
+  // error: '#B71C1C',
+  // success: '#2E7D32'
 }
 </script>
 <style lang="scss" scoped>
