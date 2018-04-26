@@ -1,10 +1,13 @@
+// todo: http://konpa.github.io/devicon/
+
+// swift, c#, MUMPS, VB6, Kendo UI
 
 import * as moment from "moment";
 
 export enum SkillType {
     Platform = 0,
-    Build_Tool = 0,
-    Tool = 0,
+    Build_Tool = 1,
+    Tool = 1,
     Language = 3,
     Framework = 4,
     Library = 5
@@ -55,6 +58,12 @@ export const AngularMaterial2: ISkill = {
     name: "Angular Material 2",
     type: SkillType.Library,
     url: "https://material.angular.io/"
+};
+export const Arduino: ISkill = {
+    file: "arduino.svg",
+    name: "Arduino",
+    type: SkillType.Platform,
+    url: "https://www.arduino.cc/"
 };
 export const Babel: ISkill = {
     file: "babel.svg",
@@ -155,7 +164,7 @@ export const Karma: ISkill = {
 export const Mongodb: ISkill = {
     file: "mongodb.svg",
     name: "MongoDB",
-    type: SkillType.Language,
+    type: SkillType.Platform,
     url: "https://www.mongodb.com/"
 };
 export const NodeJS: ISkill = {
@@ -182,17 +191,29 @@ export const Prettier: ISkill = {
     type: SkillType.Tool,
     url: "https://prettier.io/"
 };
+export const RaspberryPi: ISkill = {
+    file: "raspberry-pi.svg",
+    name: "Raspberry Pi",
+    type: SkillType.Platform,
+    url: "https://www.raspberrypi.org/"
+};
 export const React: ISkill = {
     file: "react.png",
     name: "React",
     type: SkillType.Framework,
-    url: "https://prettier.io/"
+    url: "https://reactjs.org/"
 };
 export const RXJS: ISkill = {
     file: "rxjs.png",
     name: "RxJs",
     type: SkillType.Library,
     url: "http://reactivex.io/rxjs/"
+};
+export const Scrollmagic: ISkill = {
+    file: "scrollmagic.svg",
+    name: "Scrollmagic",
+    type: SkillType.Library,
+    url: "http://scrollmagic.io/"
 };
 export const SASS: ISkill = {
     file: "sass-logo.png",
@@ -248,6 +269,7 @@ export const Skills: ISkill[] = [
     AngularJS,
     AngularMaterial,
     AngularMaterial2,
+    Arduino,
     Babel,
     BitBucket,
     Bower,
@@ -269,9 +291,11 @@ export const Skills: ISkill[] = [
     NPM,
     Nuxt,
     Prettier,
+    RaspberryPi,
     React,
     RXJS,
     SASS,
+    Scrollmagic,
     Typescript,
     VSCode,
     Vue,

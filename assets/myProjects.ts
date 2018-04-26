@@ -1,7 +1,31 @@
-import { Statuses, ISkill, Vue, Nuxt, VSCode, Vuetify, Mongodb, AngularJS, Webstorm } from "~/assets/skills/skills";
 import * as moment from "moment";
-import { Typescript, NodeJS, JS, Git, Gulp, NPM, HTML5, Bower } from "~/assets/skills/skills";
-import { Cordova, React, CSS3, GSAP, SASS } from "./skills/skills";
+import {
+    AngularJS,
+    Bower,
+    CSS3,
+    Cordova,
+    D3,
+    GSAP,
+    Git,
+    Gulp,
+    HTML5,
+    ISkill,
+    JS,
+    Mongodb,
+    NPM,
+    NodeJS,
+    Nuxt,
+    React,
+    SASS,
+    Scrollmagic,
+    Statuses,
+    Typescript,
+    VSCode,
+    Vue,
+    Vuetify,
+    Webstorm,
+    Yarn
+} from "~/assets/skills/skills";
 
 export interface IProject {
     name: string;
@@ -29,7 +53,7 @@ export const myProjects: IProject[] = [
         url: "https://www.nickbolles.com",
 
         description: [
-            "My homepage, full of all sorts of goodies about me, my experience etc.",
+            "The webpage you're looking at.",
             [
                 "This is the second iteration of my site. I used this as an opportunity to learn a new framework, Vue.js.",
                 "My plan is to build a close copy in both Vue and React to get an intro to both frameworks.",
@@ -37,6 +61,7 @@ export const myProjects: IProject[] = [
             [
                 "I use Nuxt.js for server side rendering, code splitting and the ease of development it offers,",
                 "Vuetify for beautiful base components and typeography, Typescript for modern, type safe and elegant code",
+                'an AWS Lambda - Go routine for the contact me email',
                 "and for the first time VS Code as my editor"
             ]
         ],
@@ -46,8 +71,9 @@ export const myProjects: IProject[] = [
             SASS,
             Vue,
             Vuetify,
+            Scrollmagic,
             Nuxt,
-            NPM,
+            Yarn,
             Git,
             VSCode
         ],
@@ -59,7 +85,7 @@ export const myProjects: IProject[] = [
         name: "NickBolles.com - React",
         url: "https://www.nickbolles.com",
         description: [
-            "My homepage, full of all sorts of goodies about me, my experience etc.",
+            "The webpage you're looking at.",
             [
                 "This is the second iteration of my site. I used this as an opportunity to learn a new framework, React.",
                 "My plan is to build a close copy in both Vue and React to get an intro to both frameworks.",
@@ -67,6 +93,7 @@ export const myProjects: IProject[] = [
             [
                 "I use next.js for server side rendering, code splitting and the ease of development it offers,",
                 "Vuetify for beautiful base components and typeography, Typescript for modern, type safe and elegant code",
+                'an AWS Lambda - Go routine for the contact me email',
                 "and for the first time VS Code as my editor"
             ]
         ],
@@ -76,7 +103,7 @@ export const myProjects: IProject[] = [
             SASS,
             React,
             Git,
-            NPM,
+            Yarn,
             VSCode
         ],
         startDate: moment("04/2018", "MM/YYY"),
@@ -114,6 +141,7 @@ export const myProjects: IProject[] = [
             JS,
             SASS,
             AngularJS,
+            D3,
             Cordova,
             NodeJS,
             Mongodb,
@@ -136,7 +164,8 @@ export const myProjects: IProject[] = [
             Bower,
             NodeJS,
             CSS3,
-            GSAP
+            GSAP,
+            Scrollmagic
         ],
         description: [
             [

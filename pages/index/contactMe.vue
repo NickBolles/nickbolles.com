@@ -1,21 +1,24 @@
 <template>
-    <v-container id="contactMe">
+    <v-container id="contactMe" class=" nb contact">
         <transition tag="span">
             <v-layout column>
-                <v-form v-if="!pending && !success && canChangeMode">
-                    <v-text-field v-validate="'required|alpha_spaces'" :error-messages="errors.collect('name')" data-vv-name="name" :value="name" @input="setName" label="Your Name" required></v-text-field>
+                <span v-if="!pending && !success && canChangeMode">
+                    <h1 class="headline title">Enter your information to shoot me an email. I'll get back to you as soon as I can.</h1>
+                    <v-form>
+                        <v-text-field v-validate="'required|alpha_spaces'" :error-messages="errors.collect('name')" data-vv-name="name" :value="name" @input="setName" label="Your Name" required></v-text-field>
 
-                    <v-text-field v-validate="'required|email'" :error-messages="errors.collect('email')" data-vv-name="email" :value="email" @input="setEmail" label="Your Email" required></v-text-field>
+                        <v-text-field v-validate="'required|email'" :error-messages="errors.collect('email')" data-vv-name="email" :value="email" @input="setEmail" label="Your Email" required></v-text-field>
 
-                    <v-text-field multi-line v-validate="'required|max:250'" :error-messages="errors.collect('message')" :counter="250" data-vv-name="message" label="Your Message" :value="message" @input="setMessage" required>
-                    </v-text-field>
-                    <v-layout column align-center>
-                        <h1 class="subheading warning--text">{{errorMessage}}</h1>
-                        <v-btn @click="submit" key="focus">
-                            Submit
-                        </v-btn>
-                    </v-layout>
-                </v-form>
+                        <v-text-field multi-line v-validate="'required|max:250'" :error-messages="errors.collect('message')" :counter="250" data-vv-name="message" label="Your Message" :value="message" @input="setMessage" required>
+                        </v-text-field>
+                        <v-layout column align-center>
+                            <h1 class="subheading warning--text">{{errorMessage}}</h1>
+                            <v-btn @click="submit" key="focus">
+                                Submit
+                            </v-btn>
+                        </v-layout>
+                    </v-form>
+                </span>
                 <v-progress-linear :indeterminate="true" v-if="pending && canChangeMode" key="focus"></v-progress-linear>
                 <div v-if="success && canChangeMode" key="focus" justify-content>
                     <h1 class="headline">Message sent!</h1>
@@ -86,16 +89,19 @@ export default class ContactComponent extends Vue {
 
   submit(): void {
     this.canChangeAt = -1;
-    this.$validator.validateAll()
-    .then((result) => {
-        if (result) {
-            this._submit();
-        }
-    })
+    this.$validator.validateAll().then(result => {
+      if (result) {
+        this._submit();
+      }
+    });
   }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.nb .contact {
+  .title {
+    margin-bottom: 2em;
+  }
+}
 </style>

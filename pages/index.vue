@@ -25,9 +25,9 @@
       <v-container grid-list-sm v-sw-scene="{triggerHook:0}" v-sw-pin="{}" class="application theme--dark">
         <v-layout row wrap justify-space-around>
           <v-btn to="/">About Me</v-btn>
-          <v-btn to="myExperience">My Experiance</v-btn>
-          <v-btn to="myKnowledge">My Knowledge</v-btn>
-          <v-btn to="myProjects">My Projects</v-btn>
+          <v-btn to="myExperience">Experience</v-btn>
+          <v-btn to="myKnowledge">Knowledge</v-btn>
+          <v-btn to="myProjects">Projects</v-btn>
           <v-btn to="contactMe">Contact Me</v-btn>
         </v-layout>
       </v-container>
@@ -73,8 +73,8 @@ export default class MainComponent extends Vue {
   loaded = false;
 
   timeline: TimelineLite = new TimelineLite();
-  staggerDelay = 0.5;
-  animDur = 3;
+  staggerDelay = 0.3;
+  animDur = 2;
   parallaxMult = 0.3;
 
   linksHeight: number = 0;
@@ -202,7 +202,7 @@ export default class MainComponent extends Vue {
 
 <style lang="scss">
 html {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .loading {
