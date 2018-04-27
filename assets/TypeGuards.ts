@@ -1,4 +1,3 @@
-// todo: make these actual type guards
 
 // import * as ObjectId from "bson/lib/bson/objectid";
 const toString: () => string = Object.prototype.toString;

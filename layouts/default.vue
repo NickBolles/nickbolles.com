@@ -1,32 +1,19 @@
 <template>
-  <v-app dark>
-    <v-content>
+  <div>
+    <v-app dark>
+      <v-content>
         <nuxt />
-    </v-content>
-  </v-app>
+      </v-content>
+    </v-app>
+  </div>
 </template>
 
 <script>
-  export default {
-    components: {
-    },
-    data () {
-      return {
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
-        ],
-        miniVariant: false,
-        right: true,
-        rightDrawer: false,
-        title: 'Vuetify.js'
-      }
-    }
-  }
+export default {
+  components: {}
+};
 </script>
 
 <style>
+
 </style>

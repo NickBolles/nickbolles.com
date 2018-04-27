@@ -59,11 +59,12 @@ export const myProjects: IProject[] = [
                 "My plan is to build a close copy in both Vue and React to get an intro to both frameworks.",
             ],
             [
-                "I use Nuxt.js for server side rendering, code splitting and the ease of development it offers,",
-                "Vuetify for beautiful base components and typeography, Typescript for modern, type safe and elegant code",
-                'an AWS Lambda - Go routine for the contact me email',
+                "I use Nuxt.js for server side rendering, code splitting, PWA functionality and the ease of development it offers,",
+                "Vuetify for beautiful base components and typeography, Typescript for modern, type safe and elegant code.",
+                "An AWS Lambda - Go routine for the contact me email",
                 "and for the first time VS Code as my editor"
-            ]
+            ],
+            ["It's also full fledged PWA. Just try turning off your internet and reloading the page, or adding it to your homescreen!"]
         ],
         skills: [
             Typescript,
@@ -93,7 +94,7 @@ export const myProjects: IProject[] = [
             [
                 "I use next.js for server side rendering, code splitting and the ease of development it offers,",
                 "Vuetify for beautiful base components and typeography, Typescript for modern, type safe and elegant code",
-                'an AWS Lambda - Go routine for the contact me email',
+                "an AWS Lambda - Go routine for the contact me email",
                 "and for the first time VS Code as my editor"
             ]
         ],

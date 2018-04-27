@@ -10,20 +10,13 @@ interface IRootState {
 }
 
 export const mutations: any = {
-      setName(state: IRootState, name?: string): void {
-        state.loaded = true;
-    }
+  setName(state: IRootState, name?: string): void {
+    state.loaded = true;
+  }
 }
 
 export const state: () => StoreOptions<IRootState> = () => ({
   state: {
     loaded: false
-  },
-  // modules: {
-  //   ContactInfo
-  // }
+  }
 });
-
-// const storeFactory: any = () => new Vuex.Store<IRootState>(store);
-
-// export default storeFactory;

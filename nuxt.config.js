@@ -17,7 +17,6 @@ module.exports = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
   /*
@@ -30,20 +29,20 @@ module.exports = {
     '@nuxtjs/moment',
     '@nuxtjs/vuetify',
     '@nuxtjs/webpackmonitor',
-    // todo: use this
-    // ['@nuxtjs/google-analytics', {
-    //   id: 'UA-12301-2'
-    // }]
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-55275349-7'
+    }]
   ],
   plugins: [
     '~/plugins/scrollwizardry.js',
     '~/plugins/Vee-Validate.js',
-    { src: '~/plugins/vue-parallax.js', ssr: false }
+    { src: '~/plugins/vue-parallax.js', ssr: false },
+    { src: '~/plugins/vue-bar.js', ssr: false }
   ],
   css: [
     'node_modules/vuetify/dist/vuetify.min.css',
     // 'node_modules/vuetify/src/stylus/app.styl',
-    '~/assets/style/app.styl'
+    // '~/assets/style/app.styl'
   ],
   vuetify: {
     css: false,
@@ -84,8 +83,6 @@ module.exports = {
       "babel-polyfill",
       "vue-parallax-js"
     ],
-    plugins: [
-    ],
     extend(config, ctx) {
       // if (ctx.isServer) {
       //   config.externals = [
@@ -96,16 +93,26 @@ module.exports = {
       // }
     }
   },
+  transition: {
+    name: 'fade-transition',
+    mode: 'out-in'
+  },
   router: {
     scrollBehavior: ScrollBehavior
   },
-  // todo: create static/icon.png
   manifest: {
     name: 'Nick\'s Website',
+    short_name: "Nick Bolles",
     lang: 'en',
     theme_color: "#3B8070",
     background_color: "#303030",
     description: "Nick Bolles' personal website"
+  },
+  icon: {
+    iconSrc: 'static/icon.png',
+    sizes: [16, 24, 30, 42, 44, 48, 50, 54, 55, 63, 66, 71, 75, 88, 89, 100, 107, 120, 142, 144, 150, 152, 176, 188, 192, 200, 225, 256, 284, 300, 310, 384, 388, 465, 512, 600, 620]
+  },
+  workbox: {
 
   }
 };

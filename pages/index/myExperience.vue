@@ -7,19 +7,19 @@
     <v-layout>
       <v-flex>
         <a href="/Nicholas Bolles Resume - Latest.pdf" class="btn nb ext-link">
-          <img src="~/assets/style/file-document.svg" />
+          <img src="~/assets/style/file-document.svg" alt="Resume Icon" />
           <h1 class="title">Resume</h1>
         </a>
       </v-flex>
       <v-flex>
         <a href="https://www.linkedin.com/in/nickbolles" class="btn nb ext-link">
-          <img src="~/assets/style/linkedin-box.svg" />
+          <img src="~/assets/style/linkedin-box.svg" alt="Linked Icon" />
           <h1 class="title">Linked In</h1>
         </a>
       </v-flex>
       <v-flex>
         <a href="https://github.com/NickBolles" class="btn nb ext-link">
-          <img src="~/assets/style/github-box.svg" />
+          <img src="~/assets/style/github-box.svg" alt="Github Icon" />
           <h1 class="title">Github</h1>
         </a>
       </v-flex>
@@ -29,9 +29,9 @@
     <v-layout column align-center justify-center>
       <h4>Also check out</h4>
       <v-layout align-center justify-center align-content-center="">
-        <v-btn to="myKnowledge">Knowledge</v-btn>
+        <v-btn to="/myKnowledge">Knowledge</v-btn>
         <v-flex>and</v-flex>
-        <v-btn to="myProjects">Projects</v-btn>
+        <v-btn to="/myProjects">Projects</v-btn>
       </v-layout>
     </v-layout>
     <v-flex></v-flex>
@@ -45,7 +45,7 @@ import Component from "nuxt-class-component";
 import * as moment from "moment";
 
 @Component({})
-export default class ExperienceComponent extends Vue {}
+export default class MyExperienceComponent extends Vue {}
 </script>
 
 <style lang="scss" scoped>

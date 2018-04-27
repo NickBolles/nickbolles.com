@@ -25,16 +25,16 @@
       <v-container grid-list-sm v-sw-scene="{triggerHook:0}" v-sw-pin="{}" class="application theme--dark">
         <v-layout row wrap justify-space-around>
           <v-btn to="/">About Me</v-btn>
-          <v-btn to="myExperience">Experience</v-btn>
-          <v-btn to="myKnowledge">Knowledge</v-btn>
-          <v-btn to="myProjects">Projects</v-btn>
-          <v-btn to="contactMe">Contact Me</v-btn>
+          <v-btn to="/myExperience">Experience</v-btn>
+          <v-btn to="/myKnowledge">Knowledge</v-btn>
+          <v-btn to="/myProjects">Projects</v-btn>
+          <v-btn to="/contactMe">Contact Me</v-btn>
         </v-layout>
       </v-container>
     </v-layout>
     <v-layout class="nb content section" v-bind:style="contentStyle" ref="content" flex>
       <v-layout>
-        <transition>
+        <transition name="fade-transition">
           <nuxt-child></nuxt-child>
         </transition>
       </v-layout>
@@ -46,6 +46,7 @@
 </template>
 
 <script lang="ts">
+import "material-design-icons-iconfont/dist/material-design-icons.css";
 import Vue from "vue";
 import Component from "nuxt-class-component";
 import {
@@ -147,12 +148,6 @@ export default class MainComponent extends Vue {
       this.staggerDelay,
       this.staggerDelay
     );
-    // this.timeline.to(
-    //   ".nb.main.links a",
-    //   0,
-    //   { opacity: 0, transform: "translateY(20px)" },
-    //   0
-    // );
     this.timeline.staggerTo(
       ".nb.main.links a",
       this.animDur / 3,
@@ -193,7 +188,7 @@ export default class MainComponent extends Vue {
   }
 
   private updateAvatarHeight(): void {
-    const percent: number = this.$vuetify.breakpoint.xs ? 25 : 50;
+    const percent: number = 50; /*this.$vuetify.breakpoint.xs ? 25 : */
     this.avatarHeight = this.$vuetify.breakpoint.height * (percent / 100);
   }
   //#endregion
@@ -203,6 +198,11 @@ export default class MainComponent extends Vue {
 <style lang="scss">
 html {
   // overflow: hidden;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .loading {
@@ -254,6 +254,12 @@ html {
     overflow-y: auto;
   }
 }
+
+.body-1,
+.body-2 {
+  font-size: 16px !important;
+}
+
 .scrollwizardry-pin-spacer {
   width: 100%;
   z-index: 100;
@@ -272,7 +278,7 @@ html {
     line-height: 48px !important;
   }
   .headline {
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-weight: 400;
     line-height: 32px !important;
     letter-spacing: normal !important;
@@ -281,16 +287,16 @@ html {
     margin: 8px;
   }
 }
-// less than small
-@media (max-width: 960px) {
-  .links .btn {
-    min-width: initial;
-    font-size: 12px;
-    margin: 4px 2px;
-  }
 
+// Breakpoints for the buttons to all fit
+@media (max-width: 700px) and (min-width: 500px) {
   .links {
     padding: 0;
+    .btn {
+      min-width: initial;
+      font-size: 12px;
+      margin: 4px 2px;
+    }
     .btn__content {
       padding: 0 8px;
     }

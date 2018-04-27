@@ -6,12 +6,10 @@ import { Store } from "vuex/types";
 export const actions: ActionTree<IContactState, any> = {
     submit({ commit, state }: { commit: Commit, state: IContactState }): any {
         commit("submitStart");
-        console.log("Submit");
 
         API.sendEmail(state.email, state.message, state.name)
             .then((res) => commit("submitSuccess", res))
             .catch(function (err: Error): void {
-                console.log(arguments);
                 commit("submitFailure", err);
             });
     }
@@ -63,12 +61,3 @@ export const state: () => IContactState = () => ({
     pending: false,
     errorMessage: ""
 });
-
-// export const namespaced: boolean = true;
-
-// export const ContactInfo: Module<IContactState, IRootState> = {
-//     namespaced,
-//     state,
-//     actions,
-//     mutations
-// };

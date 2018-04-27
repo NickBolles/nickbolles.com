@@ -78,6 +78,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@nuxtjs/google-analytics@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-analytics/-/google-analytics-2.0.2.tgz#75353143628fd7697b41eb5aa7da38a513394eca"
+  dependencies:
+    vue-analytics "^5.4.0"
+
 "@nuxtjs/icon@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.1.0.tgz#d06ff69778d54a65506a39862fe12ab2bba627b5"
@@ -4685,6 +4691,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+material-design-icons-iconfont@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/material-design-icons-iconfont/-/material-design-icons-iconfont-3.0.3.tgz#154a1084047d4e27237fa7f5a37e1075ceea6df2"
+
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
@@ -7971,6 +7981,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-analytics@^5.4.0:
+  version "5.10.3"
+  resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.10.3.tgz#8b942e70d818b69d01addb0148993222d8dfb710"
+
 vue-class-component@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-5.0.2.tgz#3dcdc005c58c4e88d8ec2d46e01c74f4d90135c8"
@@ -8082,6 +8096,10 @@ vue-template-es2015-compiler@^1.6.0:
 vue@^2.5.13:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
+
+vuebar@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/vuebar/-/vuebar-0.0.18.tgz#d769b6af334abb2c3fc02dbb5a02381a9d1080cf"
 
 vuetify@^1.0.0, vuetify@^1.0.15:
   version "1.0.15"
