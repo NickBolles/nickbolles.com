@@ -1,0 +1,73 @@
+{
+  "name": "www.nickbolles.com",
+  "author": "Nick Bolles",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "gulp production"
+  },
+  "main": "app.js",
+  "processID": "com.nickbolles.www",
+  "routerConfig": {
+    "ports": {
+      "80": {
+        "router": {
+          "www.nickbolles.com/*": "http://127.0.0.1:9000/[1]",
+          "nickbolles.com/*": "http://127.0.0.1:9000/[1]"
+        }
+      }
+    }
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.9.3",
+    "browser-sync": "^2.9.6",
+    "browserify": "^11.2.0",
+    "browserify-shim": "^3.8.10",
+    "connect-flash": "^0.1.1",
+    "consolidate": "0.10.0",
+    "cookie-parser": "^1.4.0",
+    "cors": "^2.7.1",
+    "debowerify": "^1.3.1",
+    "express": "^4.10.8",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.8.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-changed": "^1.3.0",
+    "gulp-filesize": "0.0.6",
+    "gulp-filter": "^3.0.1",
+    "gulp-if": "^1.2.5",
+    "gulp-ignore": "^1.2.1",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-reload": "0.0.4",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.1",
+    "gulp-util": "^3.0.6",
+    "handlebars": "2.0.x",
+    "jshint-summary": "^0.4.0",
+    "lodash": "^3.10.1",
+    "merge-stream": "^1.0.0",
+    "method-override": "^2.3.5",
+    "mold-source-map": "^0.4.0",
+    "moment": "^2.10.6",
+    "pretty-hrtime": "^1.0.0",
+    "require-dir": "^0.3.0",
+    "rimraf": "^2.4.3",
+    "run-sequence": "^1.1.4",
+    "serve-static": "^1.10.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  },
+  "browser": {},
+  "browserify-shim": {},
+  "browserify": {
+    "transform": [
+      "debowerify",
+      "browserify-shim"
+    ]
+  }
+}

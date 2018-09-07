@@ -1,0 +1,21 @@
+<div id="mainPage" class="activePage page" >
+    {{#if header}}
+        {{>header header}}
+    {{/if}}
+    <div class="content">
+        <div class="detailItem">
+            <p>Number of Assignments: {{assigns.length}}</p>
+            <p>Score: </p>
+            <p>GPA: </p>
+            <p>Credits Left: </p>
+            
+        </div>
+        <div id="assignListWrapper" class="assignListWrapper itemListWrapper">
+            <div id="scroller">
+                {{#each assigns}}
+                    {{> assignItem}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

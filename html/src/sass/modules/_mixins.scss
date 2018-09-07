@@ -1,0 +1,129 @@
+@import "variables";
+
+
+@mixin no-user-select() {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin transition($prop,$dir, $delay){
+    -webkit-transition: $prop $dir;
+    -moz-transition: $prop $dir;
+    -ms-transition: $prop $dir;
+    -o-transition: $prop $dir;
+    transition: $prop $dir;
+    -webkit-transition-delay: $dir;
+    -moz-transition-delay: $dir;
+    -ms-transition-delay: $dir;
+    -o-transition-delay: $dir;
+    transition-delay: $dir;
+}
+
+/// Media query merger
+/// Create a single media condition out of a map of queries
+/// @param {Map} $queries - Map of media queries
+@mixin media($queries) {
+    @if length($queries) == 0 {
+        @content;
+    } @else {
+        $first-key: nth(map-keys($queries), 1);
+
+        @media ($first-key: map-get($queries, $first-key)) {
+            $queries: map-remove($queries, $first-key);
+
+            @include media($queries) {
+                @content;
+            }
+        }
+    }
+}
+/// Responsive breakpoint manager
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+    // Get the query map for $breakpoints map
+    $queries: map-get($breakpoints, $breakpoint);
+
+    // If there is no query called $breakpoint in map, throw an error
+    @if not $queries {
+        @error "No value could be retrieved from `#{$breakpoint}`. "
+    + "Please make sure it is defined in `$breakpoints` map.";
+    }
+
+    // Include the media mixin with $queries
+    @include media($queries) {
+        @content;
+    }
+}
+
+
+@mixin flex-box() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex:  $values;
+    -webkit-flex:  $values;
+    -ms-flex:  $values;
+    flex:  $values;
+}
+@mixin flex-wrap($values) {
+    -moz-box-wrap: $values;
+    -webkit-box-wrap: $values;
+    -webkit-flex-wrap: $values;
+    -ms-flexbox-wrap: $values;
+    -ms-flex-wrap: $values;
+    flex-wrap: $values;
+}
+//Options are: auto | flex-start | flex-end | center | baseline | stretch;
+@mixin flex-self-align($values) {
+    align-self: $values;
+
+}
+//Options are: flex-start, center, stretch
+@mixin flex-align($values) {
+    -webkit-box-align: $values;
+    -webkit-align-items: $values;
+    -moz-box-align: $values;
+    -ms-flex-align: $values;
+    align-items: $values;
+}
+@mixin flex-justify-base(){
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+}
+//Options are: flex-start, center, stretch
+@mixin flex-justify($values) {
+    @include flex-justify-base();
+    -webkit-justify-content: $values;
+    justify-content: $values;
+}
+
+
+@mixin flex-direction-row() {
+    -moz-box-direction: row;
+    -webkit-box-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flexbox-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+@mixin flex-direction-column() {
+    -moz-box-direction: column;
+    -webkit-box-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flexbox-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}

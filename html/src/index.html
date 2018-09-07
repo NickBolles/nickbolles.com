@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Nicks Website</title>
+    <meta name="viewport"
+          content=" initial-scale=.5, maximum-scale=.75, minimum-scale=.51, width=device-width, height=device-height, target-densitydpi=medium-dpi"/>
+
+    <link rel="SHORTCUT ICON" href="/img/logo.ico">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="js/libs/flexboxgrid.css">
+    <script type="text/javascript" src="js/libs/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery-ui-1.10.4.custom.js"></script>
+    <script type="text/javascript" src="js/libs/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/libs/scrollmagic/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="js/libs/scrollmagic/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="js/libs/scrollmagic/jquery.ScrollMagic.js"></script>
+    <script type="text/javascript" src="js/libs/debug.addIndicators.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-55275349-7', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+<!--<div id="mobile-alert" >-->
+    <!--<div class="mobile-alert-content" layout="column" layout-align="space-around" layout-fill>-->
+        <!--<p class="nb-title">-->
+            <!--Hey There!-->
+            <!--<br />This site isn't quite ready for mobile yet-->
+            <!--<br />(It will be soon though!)-->
+        <!--</p>-->
+        <!--<p class="nb-title">-->
+            <!--Please check it out on your computer, and check back soon to experience a sweet new mobile format!-->
+        <!--</p>-->
+        <!--<p class="nb-title">-->
+            <!--If you want to try it out on your device anyway...-->
+        <!--</p>-->
+        <!--<a class="nb-button nb-square">-->
+            <!--Click Here-->
+        <!--</a>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div id="navpane" style="display:none;">
+    <ul class="nb-nav">
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#aboutme">About Me</a></li>
+
+        <li><a href="#myprojects">My Projects</a></li>
+
+        <li><a href="#contact">Contact Me</a></li>
+    </ul>
+</div>
+<table id="scrollTable">
+    <tr>
+        <td id="home" class="nb-section">
+            <div id="homecontent">
+                <div class="nb-welcome-pane" layout="row" layout-lt-md="column">
+                    <div flex="100" flex-gt-md="50" flex-order="2" flex-order-gt-md="1">
+                        <div class="nb-horiz-spacer" hide show-gt-md></div>
+                        <h1 class="nb-huge nb-no-margin" style="font-size:90px"
+                            data-nb-animate-options='{"duration": "1000", "delay": "1500"}'
+                            data-nb-animate-from='{"left": "-60px", "opacity": "0"}'
+                            data-nb-animate-to='{"left": "0", "opacity": "1"}'>
+                            Hey There!
+                        </h1>
+                        <div class="nb-horiz-spacer nb-small" hide show-gt-md></div>
+                        <h1 class="nb-big nb-no-margin"
+                            data-nb-animate-options='{"duration": "750", "delay": "2500", "easing": "easeOutBack"}'
+                            data-nb-animate-from='{"bottom": "-40px", "opacity": "0", "transform": "scale(0)"}'
+                            data-nb-animate-to='{"bottom": "0", "opacity": "1", "transform": "scale(1)"}'>
+                            I'm Nick
+                        </h1>
+                        <div class="nb-horiz-spacer nb-big" hide show-gt-md></div>
+                        <div class="nb-text"
+                             data-nb-animate-options='{"duration": "1500", "delay": "4750"}'
+                             data-nb-animate-from='{"opacity": "0"}'
+                             data-nb-animate-to='{"opacity": "1"}'>
+                            <p style="font-size: 20px;" class="nb-no-margin">I'm a college student, technology lover, son, brother, friend and more...</p>
+                            <div class="nb-horiz-spacer nb-big" hide show-gt-md></div>
+                            <div class="nb-button nb-arrow"
+                                 data-nb-animate-options='{"duration": "1500", "delay": "4750"}'
+                                 data-nb-animate-from='{"opacity": "0"}'
+                                 data-nb-animate-to='{"opacity": "1"}'>
+                                <a href="#aboutme" class="nb-center">
+                                    Learn More About Me
+                                    <div class="triangle"></div>
+                                    <div class="border-triangle"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-nb-animate-options='{"duration": "1000", "delay": "1500"}'
+                         data-nb-animate-from='{"left": "40px", "opacity": "0"}'
+                         data-nb-animate-to='{"left": "0", "opacity": "1"}'
+                         flex="100" flex-gt-md="50" flex-order="1" flex-order-gt-md="2">
+                        <div class="nb-horiz-spacer nb-big" hide show-gt-md></div>
+                        <div class="shadow nb-main-pic" style="overflow: hidden;border-radius:10%;">
+                            <img  style="width:130%;" src="img/main.jpg" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </td>
+        <td id="aboutme" class="nb-section">
+            <div layout="row" layout-padding layout-fill>
+                <div flex="100" flex-gt-md="60" flex-order="1">
+                    <h1>About Me</h1>
+
+                    <p>I am a Senior at University of Wisconsin - Whitewater, where I am pursuing a double major with degrees of
+                        <strong>Bachelor of Business Administration in Information Technology</strong> and a <strong>Bachelor of Science in Computer Science.</strong>
+                        I am on track to graduate in the normal amount of four years in Spring 2017.
+                    </p>
+                    <div>
+                        <p>
+                            When I'm not busy being a full time student my favorite hobbies are to play guitar, and develop. Whether it's websites (like the one your looking at),
+                            apps, or contributing to open source projects, I love developing. You can check out some projects I've been working on
+                            (such as my app, which should be released soon) in the "My Projects" section.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="nb-quarter" flex-gt-md="60" flex="100" flex-order="2" flex-order-gt-md="3">
+                    <p>I absolutely LOVE technology, computers, programming, the latest gadgets, you name it! I thrive off of figuring out how technology works
+                        and applying the knowledge to every-day life.
+                        One of the biggest reasons I love to understand how things work is because I strive to be more efficient at everything I do. I am always looking for better and
+                        faster ways to do things. I also like to do things right the first time, because I've learned that it
+                        will usually come back to bite you in the butt if you take short-cuts.
+                    </p>
+                </div>
+                <div class="" flex-gt-md="40" flex="100"  flex-order="3" flex-order-gt-md="2" layout="row">
+                    <h1 class="nb-sub-title">Some of the Tools and Technologies I've Used</h1>
+                    <ul class="nb-no-margin" flex="50">
+                        <li>- HTML 5</li>
+                        <li>- CSS3</li>
+                        <li>- Sass</li>
+                        <li>- JS (ES5 & ES6)</li>
+                        <li>- Typescript</li>
+                        <li>- Jquery</li>
+                        <li>- Angular JS</li>
+                        <li>- Java</li>
+                        <li>- Python</li>
+                    </ul>
+                    <ul class="nb-no-margin" flex="50">
+                        <li>- D3.js</li>
+                        <li>- Material Design</li>
+                        <li>- Angular Material</li>
+                        <li>- Git</li>
+                        <li>- Gulp</li>
+                        <li>- Cordova</li>
+                        <li>- Node Js</li>
+                        <li>- Mongo DB</li>
+                        <li>- Amazon EC2</li>
+                    </ul>
+                </div>
+                <div class="nb-web-locations" flex-gt-md="60" flex-lt-md="100"  flex="100" flex-order="5">
+                    <h1>Check Me Out:</h1>
+                    <div class="nb-links">
+                        <a href="https://www.linkedin.com/in/nickbolles">
+                            <img src="img/lilogo.png" alt="Linked In">
+                        </a>
+                        <a href="https://github.com/NickBolles">
+                            <img src="img/ghlogo.png" alt="Github">
+                        </a>
+                        <a class="nb-button nb-resume-button" href="http://files.nickbolles.com/public/Nicholas%20Bolles%20Resume%20Latest.pdf">
+                            My Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td id="myprojects" class="nb-section">
+            <!--
+            TODO:
+                    add technology section
+            -->
+            <div class="nb-projects-grid" layout="row" layout-wrap layout-padding>
+                <div flex-gt-md="50" flex="100">
+                    <div class="nb-project" layout-padding>
+                        <div class="nb-proj-header">
+                            <h1>Four See</h1>
+                            <div class="nb-status">
+                                <span>
+                                    Status:
+                                    <span class="nb-coming-soon">To Be Released Soon</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="nb-description">
+                            <h1>Description</h1>
+                            <div class="nb-content">
+                                Four See is an app that helps students analyze their GPA and prioritize their school work.
+                            </div>
+                        </div>
+                        <div class="nb-description">
+                            <h1>Future</h1>
+                            <div class="nb-content">
+                                I want Four See to be the centerpiece to a college students career.
+                                <br />
+                                I am considering features including:
+                                <ul>
+                                    <li>Term Scheduler, to plan out all the courses students need to take in their college career</li>
+                                    <li>Goal Assistant, to help nudge students towards their goals in the courses</li>
+                                    <li>Automatic Assignment imports, To avoid entering every assignment, which can be tiresome</li>
+                                    <li>Chat between classmates, To provide a place to ask questions about assignments</li>
+                                    <li>Improve flexibility, by adding different types of GPA Scale, Assignment Scoring etc</li>
+                                    <li>And of course, more cool stats!</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nb-description">
+                            <h1>Info</h1>
+                            Everyday I am thinking of new ideas for the future of Four See. If you have any ideas, questions, or concerns please email <a href="mailto:foursee@nickbolles.com">FourSee@NickBolles.com</a>
+                            <br />
+                            I am in the process of releasing a Beta version, which I hope to have released by the end of the year 2016. From there on Four See will be continually updated with cool new features!
+                        </div>
+                        <div class="nb-description">
+                            <h1>Technology and Libraries</h1>
+                            <div class="nb-content">
+                                <div class="nb-tabs">
+                                    <div class="nb-tab" data-label="angular">
+                                        Four See is an angular.js app
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div flex-gt-md="50" flex="100">
+                    <div class="nb-project" layout-padding>
+                        <div class="nb-proj-header">
+                            <h1>NickBolles.com</h1>
+                            <div class="nb-status">
+                                <span>
+                                    Status:
+                                    <span class="nb-complete">Complete</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="nb-description">
+                            <h1>Description</h1>
+                            <div class="nb-content">
+                                NickBolles.com is my personal website that includes basic information about me, information about my hobbies, and brief professional information
+                            </div>
+                        </div>
+                        <div class="nb-description">
+                            <h1>Description</h1>
+                            <div class="nb-content">
+                                The main page of NickBolles.com is just the start though. The server runs several NodeJS servers including:
+                                <ul>
+                                    <li>NickBolles.com Users Server and MongoDB Database</li>
+                                    <li>FourSee Server and MongoDB Database</li>
+                                    <li>Private Git Server</li>
+                                    <li>And more to come...</li>
+                                </ul>
+                                The server is an Amazon EC2 Linux instance. I have setup and documented, the instance myself and automated many of the tasks related to setup and deploying updates to the server.</div>
+                        </div>
+                        <div class="nb-description">
+                            <h1>Future</h1>
+                            <div class="nb-content">
+                                <ul>
+                                    <li>I am continuing to improve the front end website every day, and update it with new information.</li>
+                                    <li>
+                                        I am currently rolling out a new build and deploy process using Git, Git sub-modules, NodeJS and <a href="https://github.com/foreverjs/forever">Forever</a> along with <a href="https://github.com/zapty/forever-service">Forever-Service.</a>
+                                        <br /><a onclick="$('#new-deploy-deets').slideToggle();$('.nb-details-toggle').css({display:'block'})" class="nb-details-toggle">For More information Click Here</a>
+
+                                        <div id="new-deploy-deets" class="nb-hide nb-details" onclick="$('new-deploy-deets').slideToggle()">
+                                            <h1>New Deploy Process Details</h1>
+                                            <div class="nb-content">
+                                                <p>This new process makes heavy use of NodeJS for all servers and websites
+                                                    For example this website is run by a NodeJS static server on port 9000 (Try going to <a href="http://nickbolles.com:9000">NickBolles.com:9000</a>)
+                                                    <br />
+                                                    When a request comes in on port 80 the server-router, a NodeJS Instance of <a href="https://github.com/encharm/http-master">http-master</a>, routes the request based on the domain, sub-domain and path of the request to a certain port.
+                                                </p>
+                                                <ul>
+                                                    <li>First, a Git "Server Repository" contains multiple Git sub-modules (for example nickbolles.com)</li>
+                                                    <li>Second, running the "setup" script will install NodeJS (via <a href="https://github.com/creationix/nvm">nvm</a>), and all npm modules needed. Then it will create a <a href="https://github.com/zapty/forever-service">Forever-Service</a> out of a "start-servers.js" file to keep the servers running as a service</li>
+                                                    <li>When the "start-servers.js" Forever-Service starts, it will read all of the Git sub-modules, start them, and read their package.json for the routes that they require for the server-router</li>
+                                                    <li>Then the "start-servers.js" script will create the http-master config file, allowing the server-router to dynamically allocate routes for the sub-modules currently included</li>
+                                                    <li>After creating the config file for the server-router the "start-servers.js" script starts the router, and everything should be running and accessible!</li>
+                                                </ul>
+                                                <br />
+
+                                                All in all it goes:
+                                                <ol>
+                                                    <li>Clone Git</li>
+                                                    <li>Run "Setup.sh"</li>
+                                                    <li>Access content</li>
+                                                </ol>
+                                                Management of the service is easy with "sudo service nb-servers start|stop|restart|status"
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+        </td>
+
+
+        <td id="contact" class="nb-section">
+            <div layout="column" layout-fill layout-align="center center">
+                <div flex="100" flex-gt-md="50">
+                    <h1>Contact Me</h1>
+                    <p>Send me an email at <a href="mailto:me@nickbolles.com">Me@NickBolles.com</a> I'll respond as soon as I
+                        can!</p>
+
+                    <p>I encourage anyone and everyone to email me with questions, complaints, feedback, comments etc. about me, Four See, my website or even the weather today. All inquiries are welcome!</p>
+                </div>
+            </div>
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+
+</html>
+
+
+
