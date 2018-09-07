@@ -1,5 +1,23 @@
+<<<<<<< HEAD
 .history
 node_modules
 .next
 .nuxt
 react/coverage
+=======
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+#dist
+
+old-ver
+/.history
+sw.*
+>>>>>>> dev-vue
