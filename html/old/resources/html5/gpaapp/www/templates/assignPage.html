@@ -1,0 +1,16 @@
+<div id="mainPage" class="activePage page" >
+    {{#if header}}
+        {{>header header}}
+    {{/if}}
+    <div class="content">
+        <div class="detailItem">
+            <p>Assignment Name: {{assignName}}</p>
+            <p>Possible Points: {{tPts}}</p>
+            <p>Scored Points: {{sPts}}</p>
+            <p>Weight: {{weight}}</p>
+            <p>Due Date: {{momentDate dueDate}}</p>
+            <p>Notes: {{notes}}</p>
+            
+        </div>
+    </div>
+</div>

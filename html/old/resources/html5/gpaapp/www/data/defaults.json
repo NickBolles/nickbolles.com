@@ -1,0 +1,96 @@
+{
+    "launchNum":"0",
+    "lastLaunch": "0", 
+    "theme":{
+            "background-color":""
+    },
+    "loginPage":{
+        "registerURL": "http://www.nickbolles.com:8080/signup",
+        "loginURL": "http://www.nickbolles.com:8080/login"
+    },
+    "mainPage":{
+        "header":{
+            "hStyle":{
+                
+            },
+            "title": "Welcome!",
+            "tStyle": {
+                "color": "white"
+            },
+            "lBtn": "fa-bars",
+            "lBtnAction": "toggleMenu()",
+            "rBtn": "fa-plus",
+            "rBtnAction": "console.log('right button on mainPage clicked');",
+            "btnStyle":{       
+                "color":"white"
+            }
+        
+        }
+    },
+    "termPage":{
+        "header":{
+            "hStyle":{
+                
+            },
+            "title": "Courses",
+            "tStyle": {
+                "color": "white"
+            },
+            "lBtn": "fa-bars",
+            "lBtnAction": "toggleMenu()",
+            "rBtn": "fa-plus",
+            "rBtnAction": "console.log('right button on termPage clicked');",
+            "btnStyle":{       
+                "color":"white"
+            }
+        
+        }
+    },
+    "coursePage":{
+        "header":{
+            "hStyle":{
+                
+            },
+            "title": "Assignments",
+            "tStyle": {
+                "color": "white"
+            },
+            "lBtn": "fa-bars",
+            "lBtnAction": "toggleMenu()",
+            "rBtn": "fa-plus",
+            "rBtnAction": "console.log('right button on termPage clicked');",
+            "btnStyle":{       
+                "color":"white"
+            }
+        
+        }
+    },
+    "assignPage":{
+        "header":{
+            "hStyle":{
+                
+            },
+            "title": "Assignment Details",
+            "tStyle": {
+                "color": "white"
+            },
+            "lBtn": "fa-bars",
+            "lBtnAction": "toggleMenu()",
+            "rBtn": "fa-pencil",
+            "rBtnAction": "",
+            "btnStyle":{       
+                "color":"white"
+            }
+        }
+    },
+    "data":{
+        "syncURL": "http://www.nickbolles.com:8080//gpabot/syncuserdata",
+        "dataURL": "http://www.nickbolles.com:8080/gpabot/userdata"
+        
+    },
+    "alerts":{
+        "displayTime": 3000
+    }
+    
+        
+}

@@ -1,0 +1,187 @@
+/*body:before {  */
+	/*z-index:-1;*/
+	/*content: "";*/
+	/*position: fixed;*/
+	/*bottom: -10px;*/
+	/*left: 0;*/
+	/*width: 100%;*/
+	/*height: 50%;*/
+	/*background: linear-gradient(transparent, black);*/
+	/*background-repeat: repeat-x;*/
+/*}*/
+/*body{*/
+	/*text-align: center;*/
+	/*color:white;*/
+	/*background-image:url(../img/background.jpg);*/
+	/*background-color:black;*/
+	/*background-size:100%;*/
+	/*background-repeat:repeat;*/
+	/*background-position:center top;*/
+	/*overflow-x:hidden;*/
+	/*overflow-y:hidden;*/
+/*}*/
+
+/*#topSpacer{*/
+	/*width: calc(101% * 4);*/
+	/*margin-top:-10px;*/
+/*}*/
+/*#scrollTable{*/
+	/*width:calc(101% * 4);*/
+	/*height:100%*/
+	/*margin-top:-7px;*/
+	/*scroll-snap-points-x: repeat(25%);*/
+/*}*/
+/*.section{*/
+	/*vertical-align:top;*/
+	/*padding:70px 100px 0px 100px;*/
+	/*List-style-type:none;*/
+	/*width:25%;*/
+/*}*/
+
+/*#sectiondiv{*/
+	/*width:10px;*/
+	/*height:100%;*/
+/*}*/
+/*#center{*/
+	/*margin-left:auto;*/
+	/*margin-right:auto;*/
+/*}*/
+/*.centerVert{*/
+	/*height: 12px;*/
+	/*vertical-align:top;*/
+
+/*}*/
+/*a{*/
+	/*text-decoration:underline;*/
+	/*font-weight:bold;*/
+	/*color:white;*/
+/*}*/
+/*p{*/
+	/*font-size:25px;*/
+/*}*/
+/*li{*/
+	/*font-size:25px;*/
+/*}	*/
+/*h1{*/
+	/*font-size:40px;*/
+/*}*/
+/*h2{*/
+	/*font-size:35px;*/
+/*}*/
+/*h3{*/
+	/*font-size:30px;*/
+/*}*/
+/*ul{*/
+	/*List-style-type:none;*/
+/*}*/
+/*.bottomspacer{*/
+	/*height:100px;*/
+
+/*}*/
+
+/* ******************************NAVIGATION PANE CODE***************************************/
+/*#navpane{*/
+
+	/*position:Fixed;*/
+	/*left:50%;*/
+	/*margin-top:-60px;*/
+	/*margin-left:-250px;*/
+	/*width:500px;*/
+	/*height:50px;*/
+   /*-moz-user-select: none;*/
+   /*-khtml-user-select: none;*/
+   /*-webkit-user-select: none;*/
+   /*-ms-user-select: none;*/
+   /*user-select: none;*/
+	/**/
+/*}*/
+/*#navpane ul{*/
+	/*width: 100%;*/
+	/**/
+	/*color:black;*/
+	/**/
+	/*margin:0;*/
+	/*padding:0;*/
+/*}*/
+/*#navpane ul li{*/
+	/*width: 25%;*/
+	/*float:left;*/
+/*}*/
+/*#navpane ul li a:link, a:visited {*/
+	/*display:block;*/
+	/*width:91%;*/
+	/*height: 50px;*/
+	/*font-weight:bold;*/
+	/*background-color:#246BB2;*/
+	/*text-align:center;*/
+	/*padding:4px;*/
+	/*text-decoration:none;*/
+	/*text-transform:uppercase;*/
+	/*font-size:20px;*/
+	/*border:2px solid black;*/
+	/*outline: 0;*/
+/*}*/
+
+/*#navpane ul li a:hover{*/
+	/*background-color:#5089C1;*/
+	/*-ms-transform: skew(0deg,2deg); /!* IE 9 *!/*/
+	/*-webkit-transform: skew(0deg,2deg); /!* Chrome, Safari, Opera *!/*/
+	/*transform: skew(0deg,2deg);*/
+	/*box-shadow: 5px 10px 5px #000000;*/
+	/*border:2px solid black;*/
+	/*outline: 0;*/
+/*}*/
+/*.navbarspacer{*/
+	/*width:1%;*/
+	/*background-color:black;*/
+/*}*/
+/* ******************************NAVIGATION PANE CODE***************************************/
+
+
+/* ******************************FORMAT DOWNLOAD BUTTONS***************************************/
+.downloadTable, .downloadTable th, .downloadTable td{
+	z-index:4;
+	margin: auto auto auto auto;
+	border:2px solid white;
+	border-collapse:collapse;
+	padding:5px;
+	vertical-align:middle;
+	text-align:center;
+	text-decoration:none;
+	font-size:25px;
+}
+.downloadTable td{
+	height: 10px;
+	width:100px;
+}
+
+.downloadlink{
+	text-decoration:none;
+	font-size:30px;
+}
+
+.download,#virusbutton{
+	z-index:1;
+	margin: 5px auto 5px auto;
+	height:40px;
+	width:200px;
+	background-color: #246BB2;
+	border-width:3px;
+	border-color:#194B7D;
+	border-style: solid;
+	border-radius:20px;
+	text-align:center;
+	vertical-align:middle;
+	color:white;
+	text-decoration:none;
+}
+
+.download:hover, #virusbutton:hover{
+	background-color: #5089C1;
+	text-decoration:none;
+	color:	#194B7D;
+}
+#virusbutton{
+	width:130px;
+}
+/* ******************************FORMAT DOWNLOAD BUTTONS***************************************/

@@ -1,0 +1,622 @@
+*:not(input) {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+    
+}
+a{
+    text-decoration: none;
+}
+body {
+    font-size: 16px;
+    line-height: 1.4;
+    z-index: 1;
+    margin: 0px;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* Prevent callout */
+
+.nocallout {
+    -webkit-touch-callout: none;
+}
+
+.pressed {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+
+textarea[contenteditable] {
+    -webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+   they have been set as display: none */
+
+.gifhidden {
+    position: absolute;
+    left: -100%;
+}
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    direction: ltr;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -999em;
+}
+
+.ir br {
+    display: none;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 800px) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+html,
+body,
+#app{
+    width:100%;
+    height:100%;
+}
+#app{
+    overflow:hidden;
+    display:table;
+}
+.active{
+	color:#fff;
+	background: linear-gradient(#1e1d1d, #383737 21%);//0-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,29,29,1)), color-stop(21%,rgba(56,55,55,1)));
+	text-shadow: 0px 1px 1px #000;
+}
+
+.ui-btn-corner-all {
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+.ui-loader{
+	background-color: black;
+	opacity: .8;
+	border-radius: 10px;
+	color:white;
+	padding: 5px;
+	position: absolute;
+	z-index: 999999999;
+	left: 50%;
+	margin-left:-40px;
+	top:50%;
+	margin-top:-15px;
+	display:none;
+	
+}
+.ui-icon-loading{
+	  display: inline-block;
+	  margin-left: auto;
+	  margin-right: auto;
+	
+}
+
+.header, .error, .success{
+    z-index: 999995;
+    background: #005EB2;
+    position: fixed;
+    width: 100%;
+    font-size: 4em;
+    height: 4.375rem;  padding-left: 1rem;  padding-right: 1rem;    color: #454545;  
+    white-space: nowrap;    word-spacing: 0;  padding: 0;  margin: 0;  font: inherit;
+    border: none;
+}
+.error{
+    z-index:999998;
+    color:white;
+    background: linear-gradient(#ae0000, #C50A0A );
+    //Using animate.css it will auto hide it and show it
+    display:block;
+    cursor:pointer
+}
+.success{
+    z-index:999998;
+    color:white;
+    background: linear-gradient(#005200, #007C00 );
+    //Using animate.css it will auto hide it and show it
+    display:block;
+    cursor:pointer;
+}
+.header .center-vert{
+    z-index: 999996;
+}
+.header h1{
+min-height: 1.1em;
+text-align: center;
+display: inline-block;
+margin: 0 30%;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+outline: 0!important;
+font-family: sans-serif;
+cursor: pointer;
+font: inherit;
+background: transparent;
+font-size: 2em;
+max-height: 100%;
+font-weight: 400;
+vertical-align: middle;
+}
+.error h1, .success h1{
+    margin: 0 5%;
+    min-height: 1.1em;
+    text-align: center;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: 0!important;
+    font-family: sans-serif;
+    cursor: pointer;
+    font: inherit;
+    background: transparent;
+    font-size: 1.5em;
+    max-height: 100%;
+    font-weight: 400;
+    vertical-align: middle;
+}
+/*
+border-bottom-color: rgb(27, 27, 27);
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: rgb(27, 27, 27);
+border-left-style: solid;
+border-left-width: 0px;
+border-right-color: rgb(27, 27, 27);
+border-right-style: solid;
+border-right-width: 0px;
+border-top-color: rgb(27, 27, 27);
+border-top-style: solid;
+border-top-width: 1px;
+color: rgb(255, 255, 255);
+vertical-align: middle;
+font-family: sans-serif;
+font-size: 1.5em;
+font-weight: bold;
+
+line-height: 20.799999237060547px; 
+right: 0px;
+left: 0px;
+top: -1px;
+text-align: center;
+text-shadow: rgb(17, 17, 17) 0px 1px 0px;
+box-shadow: black 0px 1px 10px 0px;
+padding-top:.5em;
+padding-bottom: 1%;
+
+}
+.header h1{
+    color:black;
+    font-size: 1em;
+    min-height: 1.1em;
+    text-align: center;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: 0 !important;
+    font-weight: 700;
+}*/
+
+
+.button{
+    text-decoration: none;
+    color:black;
+    height: inherit;
+    width: inherit;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: center;
+    height: 30px;
+    width: 60px;
+    background: linear-gradient(white, gray);
+    padding:5px;
+    border-radius: .5em;
+    display:inline-block;
+    vertical-align: middle;
+}
+.center{
+    left:auto;
+    right:auto;
+}
+input{
+    text-align: center;
+}
+/* Portrait layout (default) */
+.page{
+    display: table;
+    width:100%;
+    height:100%;
+    background: linear-gradient(#E4E4E4 0%, #A7A7A7 100%);
+    vertical-align: middle;
+    text-align: center;
+    overflow:hidden;
+}
+.content {
+    background: linear-gradient(#E4E4E4 0%, #A7A7A7 100%);
+    display: table;
+    vertical-align: middle;
+    width: 100%;
+    text-align:center;
+}
+.fill-client{
+    width:100%;
+    height:100%;
+}
+.center-wrapper{
+    display:table;
+}
+.center-vert{
+    display:table-cell;
+    vertical-align: middle;
+    position:relative;
+    //top:-10%;
+}
+h1, label {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:1em;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+/*@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+@keyframes rainbowColor{
+    from {background: transparent;}
+    12% {background: red;}
+    25%   {background: orange;}
+    37%   {background: yellow;}   
+    50%  {background: green;}
+    62%  {background: blue;}
+    75%  {background: violet;}
+    to  {background: transparent;}
+}
+@-webkit-keyframes rainbowColor{
+    from {background: transparent;}
+    6%   {transform: scale(1.2,1.2);}
+    12%  {background: red;transform: scale(1,1);}
+    25%  {background: orange;transform: scale(1.2,1.2);}
+    37%  {background: yellow;transform: scale(1,1);}   
+    50%  {background: green;transform: scale(1.2,1.2);}
+    62%  {background: blue;transform: scale(1,1);}
+    75%  {background: indigo;transform: scale(1.2,1.2);}
+    87%  {background: violet; transform: scale(1,1);}
+    to   {background: transparent;transform: scale(1.2,1.2);}
+}*/
+#menuContent{
+    overflow-y: scroll;
+}
+#menu footer ul li{
+    display:inline-block;
+    width:30%;
+    text-align: center;
+}
+#menu footer ul li a, #menu footer ul{
+    text-align: center;
+}
+#menu footer{
+    height:10%;
+}
+#menu footer ul{
+}
+#headerBorder, #headerShadow{
+    height: 5px;
+    position:absolute;
+    display:inline;
+    width:100%;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 2%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(2%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 2%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 2%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 2%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 2%,rgba(0,0,0,0.65) 100%); /* W3C */
+    bottom: 0;
+    left: 0;
+    z-index: 999996;
+}
+#headerShadow{
+    bottom: -9px;
+    height:10px;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+}
+.button-left{
+    position:absolute;
+    left:0;
+    top:0;
+    padding-right: 3%;
+    padding-left: 3%;
+    //border-right: 1px solid #acacac;
+    font-size: 2em;
+    color: white;
+    height: 100%;
+    z-index: 999997;
+}
+.button-right{
+    position:absolute;
+    right:0;
+    top: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    //border-left: 1px solid #acacac;
+    font-size: 2em;
+    color: white;
+    height: 100%;
+    z-index: 999997;
+}
+.fa{
+    text-decoration: none;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.7);
+}
+.white{
+    color:white;
+    
+}
+
+
+
+
+
+/* ==========================================================================
+   CUSTOM ANNIMATIONS
+   ========================================================================== */
+
+@-webkit-keyframes fadeInTo80 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .8;
+  }
+}
+
+@keyframes fadeInTo80 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .8;
+  }
+}
+
+.fadeInTo80 {
+  -webkit-animation-name: fadeInTo80;
+  animation-name: fadeInTo80;
+}
+@-webkit-keyframes fadeOutFrom80 {
+  0% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutFrom80 {
+  0% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOutFrom80 {
+  -webkit-animation-name: fadeOutFrom80;
+  animation-name: fadeOutFrom80;
+}
+.menuTransitions {
+   -webkit-transition: left .5s, -webkit-transform .5s;  /* For Safari 3.1 to 6.0 */
+   transition: left .5s, transform .5s;
+}
+
+/* ==========================================================================
+   CUSTOM ANNIMATIONS
+   ========================================================================== */
