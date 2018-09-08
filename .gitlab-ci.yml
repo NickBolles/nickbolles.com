@@ -6,9 +6,8 @@ cache:
 
 variables:
   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
-  PRODUCTION_CONTAINER_NAME: $CI_PROJECT_PATH_SLUG
+  PRODUCTION_CONTAINER_NAME: www_nickbolles_com
   PRODUCTION_APP_URL: https://$PRODUCTION_DOMAIN
-  PRODUCTION_PORT: 5000
 
 
 stages:
@@ -137,8 +136,8 @@ stop_production:
   }
 
   function cleanup_production() {
-    docker stop $CONTAINER_RELEASE_IMAGE || true
-    docker rm $CONTAINER_RELEASE_IMAGE || true
+    docker stop $PRODUCTION_CONTAINER_NAME || true
+    docker rm $PRODUCTION_CONTAINER_NAME || true
   }
 
 
