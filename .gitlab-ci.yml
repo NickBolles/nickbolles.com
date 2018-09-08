@@ -40,7 +40,7 @@ build_html:
   script:
     - echo exporting html
     - mkdir ./public || true
-    - mv html ./public/html
+    - mv html/src ./public/html
   artifacts:
     name: html-build
     paths:
