@@ -36,6 +36,8 @@ build_vue:
 build_html:
   stage: build
   image: node:8
+  script:
+    - echo exporting html
   artifacts:
     name: html-build
     paths:
