@@ -4,10 +4,18 @@ cache:
   paths:
     - node_modules/
 
+variables:
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+  PRODUCTION_CONTAINER_NAME: $CI_PROJECT_PATH_SLUG
+  PRODUCTION_APP_URL: https://$PRODUCTION_DOMAIN
+  PRODUCTION_PORT: 5000
+
+
 stages:
   - build
   - release
   - deploy
+
 
 build_vue:
   stage: build
@@ -46,6 +54,16 @@ build_html:
     paths:
       - public/html
 
+build_docker:
+  stage: build
+  script:
+    - setup_docker
+    - docker build -t $CONTAINER_RELEASE_IMAGE .
+    - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+    refs:
+      - master
+
 pages:
   stage: deploy
   script: 
@@ -53,3 +71,74 @@ pages:
   artifacts:
     paths:
       - public
+
+      
+production:
+  stage: deploy
+  allow_failure: false
+  script:
+    - setup_docker
+    - cleanup_production
+    - deploy_production
+  environment:
+    name: production
+    url: $PRODUCTION_APP_URL
+  only:
+    refs:
+      - master
+
+stop_production:
+  stage: cleanup
+  when: manual
+  allow_failure: false
+  script:
+    - setup_docker
+    - cleanup_production
+  environment:
+    name: production
+    action: stop
+  only:
+    refs:
+      - master
+
+
+
+
+.setup_scripts: &setup_scripts |
+  # Auto DevOps variables and functions
+  [[ "$TRACE" ]] && set -x
+
+  # =====Setup Code=====
+  function setup_docker() {
+    if [[ -n "$CI_JOB_TOKEN" ]]; then
+      echo "Logging to GitLab Container Registry with CI Job Token..."
+      docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+      echo ""
+    fi
+  }
+
+  # =====Production Apps=====
+  function deploy_production() {
+    # todo: add a weight to Vue and React to do some A/B testing?
+    docker run -d --restart='always' \
+      -l 'traefik.enable'='true' \
+      -l 'traefik.vue.frontend.rule'="Host:$PRODUCTION_DOMAIN,Host:$PRODUCTION_DOMAIN;PathPrefixStrip:/vue" \
+      -l 'traefik.vue.port'="80" \
+      -l 'traefik.react.frontend.rule'="Host:$PRODUCTION_DOMAIN;PathPrefixStrip:/react" \
+      -l 'traefik.react.port'="81" \
+      -l 'traefik.old.frontend.rule'="Host:$PRODUCTION_DOMAIN;PathPrefixStrip:/old" \
+      -l 'traefik.old.port'="82" \
+      --net='proxied' \
+      --name $PRODUCTION_CONTAINER_NAME \
+      $CONTAINER_RELEASE_IMAGE
+  }
+
+  function cleanup_production() {
+    docker stop CONTAINER_RELEASE_IMAGE || true
+    docker rm CONTAINER_RELEASE_IMAGE || true
+  }
+
+
+  
+before_script:
+  - *setup_scripts
