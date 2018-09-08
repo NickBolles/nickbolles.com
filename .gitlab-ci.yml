@@ -16,10 +16,11 @@ build_vue:
     - cd vue
     - npm install
     - npm run generate
+    - mv ./dist ../vue-build-files
   artifacts:
     name: vue-build
     paths:
-      - vue/dist
+      - vue-build-files
 
 .build_react:
   stage: build
