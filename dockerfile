@@ -1,8 +1,6 @@
-from node:alpine
+ /usr/src/app
 
-WORKDIR /usr/src/app
-
-RUN npm install -g http-server pm2
+RUN npm install http-server
 
 COPY server.js ./
 RUN chmod +x server.js
