@@ -15,7 +15,7 @@ build_vue:
   script:
     - cd vue
     - npm install
-    - npm run build
+    - npm run generate
   artifacts:
     name: vue-build
     paths:
