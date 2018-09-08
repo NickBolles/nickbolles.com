@@ -1,0 +1,58 @@
+image: docker:git
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - release
+  - deploy
+
+build_vue:
+  stage: build
+  image: node:8
+  script:
+    - cd vue
+    - npm install
+    - npm run build
+  artifacts:
+    name: vue-build
+    paths:
+      - dist
+
+build_react:
+  stage: build
+  image: node:8
+  script:
+    - cd react
+    - npm install
+    - npm run build
+  artifacts:
+    name: react-build
+    paths:
+      - dist
+      
+build_html:
+  stage: build
+  image: node:8
+  script:
+    - cd react
+    - npm install
+    - npm run build
+  artifacts:
+    name: html-build
+    paths:
+      - dist
+
+pages:
+  stage: deploy
+  image: node:8
+  script: 
+    - ls ./*
+    - mv html-build ./public/html
+    - mv react-build ./public/react
+    - mv vue-build ./public/vue
+  artifacts:
+    paths:
+      - public
