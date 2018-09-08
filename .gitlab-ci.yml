@@ -88,7 +88,7 @@ production:
       - master
 
 stop_production:
-  stage: cleanup
+  stage: deploy
   when: manual
   allow_failure: false
   script:
