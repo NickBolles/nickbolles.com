@@ -15,6 +15,7 @@ build_vue:
     - cd vue
     - npm install
     - npm run generate
+    - mkdir ../public
     - mv ./dist ../public/vue
   artifacts:
     name: vue-build
@@ -27,6 +28,7 @@ build_vue:
     - cd react
     - npm install
     - npm run build
+    - mkdir ../public
     - mv ./dist ../public/react
   artifacts:
     name: react-build
@@ -37,6 +39,7 @@ build_html:
   stage: build
   script:
     - echo exporting html
+    - mkdir ../public
     - mv html ./public/html
   artifacts:
     name: html-build
