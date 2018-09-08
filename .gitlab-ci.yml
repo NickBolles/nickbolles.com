@@ -124,11 +124,11 @@ stop_production:
     # todo: add a weight to Vue and React to do some A/B testing?
     docker run -d --restart='always' \
       -l 'traefik.enable'='true' \
-      -l 'traefik.vue.frontend.rule'="Host:$PRODUCTION_DOMAIN,Host:$PRODUCTION_DOMAIN;PathPrefixStrip:/vue" \
+      -l 'traefik.vue.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN,Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/vue" \
       -l 'traefik.vue.port'="80" \
-      -l 'traefik.react.frontend.rule'="Host:$PRODUCTION_DOMAIN;PathPrefixStrip:/react" \
+      -l 'traefik.react.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/react" \
       -l 'traefik.react.port'="81" \
-      -l 'traefik.old.frontend.rule'="Host:$PRODUCTION_DOMAIN;PathPrefixStrip:/old" \
+      -l 'traefik.old.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/old" \
       -l 'traefik.old.port'="82" \
       --net='proxied' \
       --name $PRODUCTION_CONTAINER_NAME \
