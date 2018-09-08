@@ -1,4 +1,4 @@
-image: node:alpine
+from node:alpine
 
 WORKDIR /usr/src/app
 
