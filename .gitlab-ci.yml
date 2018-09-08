@@ -36,14 +36,10 @@ build_vue:
 build_html:
   stage: build
   image: node:8
-  script:
-    - cd react
-    - npm install
-    - npm run build
   artifacts:
     name: html-build
     paths:
-      - dist
+      - html
 
 pages:
   stage: deploy
