@@ -39,7 +39,7 @@ build_html:
   stage: build
   script:
     - echo exporting html
-    - mkdir ../public || true
+    - mkdir ./public || true
     - mv html ./public/html
   artifacts:
     name: html-build
