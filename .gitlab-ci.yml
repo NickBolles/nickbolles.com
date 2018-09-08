@@ -55,7 +55,8 @@ build_html:
       - public/html
 
 build_docker:
-  stage: build
+  image: docker:git
+  stage: release
   script:
     - setup_docker
     - docker build -t $CONTAINER_RELEASE_IMAGE .
@@ -74,6 +75,7 @@ pages:
 
       
 production:
+  image: docker:git
   stage: deploy
   allow_failure: false
   script:
@@ -88,6 +90,7 @@ production:
       - master
 
 stop_production:
+  image: docker:git
   stage: deploy
   when: manual
   allow_failure: false
