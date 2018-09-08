@@ -1,9 +1,12 @@
- /usr/src/app
+image: node:alpine
+
+WORKDIR /usr/src/app
 
 RUN npm install http-server
 
 COPY server.js ./
 RUN chmod +x server.js
+
 COPY /public/* ./
 
 EXPOSE 8080 8081 8082
