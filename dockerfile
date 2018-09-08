@@ -10,4 +10,4 @@ COPY /public/* ./
 
 EXPOSE 80 81 82
 
-ENTRYPOINT ["./docker-entrypoint.sh"]
+CMD ["./docker-entrypoint.sh"]
