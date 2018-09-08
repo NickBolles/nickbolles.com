@@ -21,7 +21,7 @@ build_vue:
     paths:
       - dist
 
-build_react:
+.build_react:
   stage: build
   image: node:8
   script:
