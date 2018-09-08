@@ -19,7 +19,7 @@ build_vue:
   artifacts:
     name: vue-build
     paths:
-      - dist
+      - vue/dist
 
 .build_react:
   stage: build
@@ -48,6 +48,7 @@ pages:
   image: node:8
   script: 
     - ls ./*
+    - ls /
     - mv html-build ./public/html
     - mv react-build ./public/react
     - mv vue-build ./public/vue
