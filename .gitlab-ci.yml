@@ -125,11 +125,11 @@ stop_production:
     docker run -d --restart='always' \
       -l 'traefik.enable'='true' \
       -l 'traefik.vue.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN,Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/vue" \
-      -l 'traefik.vue.port'="80" \
+      -l 'traefik.vue.port'="8080" \
       -l 'traefik.react.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/react" \
-      -l 'traefik.react.port'="81" \
+      -l 'traefik.react.port'="8081" \
       -l 'traefik.old.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/old" \
-      -l 'traefik.old.port'="82" \
+      -l 'traefik.old.port'="8082" \
       --net='proxied' \
       --name $PRODUCTION_CONTAINER_NAME \
       $CONTAINER_RELEASE_IMAGE
