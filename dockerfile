@@ -12,4 +12,4 @@ COPY /public/* ./
 EXPOSE 8080 8081 8082
 
 # Actual script to start can be overridden from `docker run`
-CMD ["pm2", "start", "process.json"]
+CMD ["pm2", "start", "process.json", "--no-daemon"]

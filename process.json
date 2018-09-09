@@ -8,7 +8,7 @@
     },
     {
       "name": "html",
-      "cwd": "./ht",
+      "cwd": "./html",
       "script": "/usr/local/bin/http-server",
       "args": ["-p", "8082"]
     }
