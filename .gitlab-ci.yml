@@ -56,7 +56,7 @@ build_docker:
   stage: release
   script:
     - setup_docker
-    - docker build -t $CONTAINER_RELEASE_IMAGE .
+    - docker build -t $CONTAINER_RELEASE_IMAGE ./vue/
     - docker push $CONTAINER_RELEASE_IMAGE
   only:
     refs:
@@ -77,7 +77,7 @@ production:
   script:
     - setup_docker
     - cleanup_production
-    - deploy_production
+    - deploy_production_vue
   environment:
     name: production
     url: $PRODUCTION_APP_URL
@@ -114,7 +114,7 @@ stop_production:
   }
 
   # =====Production Apps=====
-  function deploy_production() {
+  function deploy_production_vue() {
     # todo: add a weight to Vue and React to do some A/B testing?
     docker run -d --restart='always' \
       -l 'traefik.enable'='true' \
