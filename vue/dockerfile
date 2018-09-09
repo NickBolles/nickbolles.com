@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 RUN npm install -g http-server
 
-COPY public/* ./
+COPY ../public/vue ./
 
 EXPOSE 8080 8081 8082
 
