@@ -7,8 +7,8 @@
       "args": ["-p", "8080"]
     },
     {
-      "name": "html",
-      "cwd": "./html",
+      "name": "old",
+      "cwd": "./old",
       "script": "/usr/local/bin/http-server",
       "args": ["-p", "8082"]
     }

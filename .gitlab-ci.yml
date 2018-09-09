@@ -9,12 +9,10 @@ variables:
   PRODUCTION_CONTAINER_NAME: www_nickbolles_com
   PRODUCTION_APP_URL: https://$PRODUCTION_DOMAIN
 
-
 stages:
   - build
   - release
   - deploy
-
 
 build_vue:
   stage: build
@@ -41,17 +39,17 @@ build_vue:
     name: react-build
     paths:
       - public/react
-      
-build_html:
+
+build_old:
   stage: build
   script:
-    - echo exporting html
+    - echo exporting old
     - mkdir ./public || true
-    - mv html/src ./public/html
+    - mv old/src ./public/old
   artifacts:
-    name: html-build
+    name: old-build
     paths:
-      - public/html
+      - public/old
 
 build_docker:
   image: docker:git
@@ -66,13 +64,12 @@ build_docker:
 
 pages:
   stage: deploy
-  script: 
+  script:
     - echo exporting pages
   artifacts:
     paths:
       - public
 
-      
 production:
   image: docker:git
   stage: deploy
@@ -103,9 +100,6 @@ stop_production:
     refs:
       - master
 
-
-
-
 .setup_scripts: &setup_scripts |
   # Auto DevOps variables and functions
   [[ "$TRACE" ]] && set -x
@@ -128,7 +122,7 @@ stop_production:
       -l 'traefik.vue.port'="8080" \
       -l 'traefik.react.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/react" \
       -l 'traefik.react.port'="8081" \
-      -l 'traefik.old.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/old" \
+      -l 'traefik.old.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefix:/old" \
       -l 'traefik.old.port'="8082" \
       --net='proxied' \
       --name $PRODUCTION_CONTAINER_NAME \
@@ -140,7 +134,5 @@ stop_production:
     docker rm $PRODUCTION_CONTAINER_NAME || true
   }
 
-
-  
 before_script:
   - *setup_scripts
