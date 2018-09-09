@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "vue",
+      "cwd": "./vue/",
+      "script": "/usr/bin/http-server",
+      "args": ["-p", "8080"]
+    },
+    {
+      "name": "html",
+      "cwd": "./html/",
+      "script": "/usr/bin/http-server",
+      "args": ["-p", "8082"]
+    }
+  ]
+}
