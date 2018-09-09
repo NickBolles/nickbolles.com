@@ -3,13 +3,13 @@
     {
       "name": "vue",
       "cwd": "./vue/",
-      "script": "/usr/bin/http-server",
+      "script": "/usr/local/bin/http-server",
       "args": ["-p", "8080"]
     },
     {
       "name": "html",
-      "cwd": "./html/",
-      "script": "/usr/bin/http-server",
+      "cwd": "./ht",
+      "script": "/usr/local/bin/http-server",
       "args": ["-p", "8082"]
     }
   ]
