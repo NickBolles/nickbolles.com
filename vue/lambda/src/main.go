@@ -108,6 +108,10 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 
 	successResponse, err := json.Marshal(ResponseMessage{Success, "Message is sent"})
 	return events.APIGatewayProxyResponse{
+		Headers: map[string]string{
+			"Content-Type":                "application/json",
+			"Access-Control-Allow-Origin": "*",
+		},
 		Body:       string(successResponse),
 		StatusCode: 200,
 	}, nil
