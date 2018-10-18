@@ -20,10 +20,10 @@
                     </v-form>
                 </span>
                 <v-progress-linear :indeterminate="true" v-if="pending && canChangeMode" key="focus"></v-progress-linear>
-                <div v-if="success && canChangeMode" key="focus" justify-content>
+                <v-layout v-if="success && canChangeMode" key="focus" justify-center align-center>
                     <h1 class="headline">Message sent!</h1>
                     <p class="subheading">Thanks for contacting me, I'll get back to you as soon as I can!</p>
-                </div>
+                </v-layout>
             </v-layout>
         </transition>
     </v-container>
