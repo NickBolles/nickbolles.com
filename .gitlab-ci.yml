@@ -6,6 +6,7 @@ cache:
 
 variables:
   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+  CONTAINER_RELEASE_IMAGE_OLD: $CI_REGISTRY_IMAGE:old
   PRODUCTION_CONTAINER_NAME: www_nickbolles_com
   PRODUCTION_APP_URL: https://$PRODUCTION_DOMAIN
 
@@ -59,6 +60,17 @@ build_docker:
   only:
     refs:
       - master
+      
+build_docker_old:
+  image: docker:git
+  stage: release
+  script:
+    - setup_docker
+    - docker build -t $CONTAINER_RELEASE_IMAGE_OLD ./old
+    - docker push CONTAINER_RELEASE_IMAGE_OLD
+  only:
+    refs:
+      - master
 
 pages:
   stage: deploy
@@ -75,6 +87,7 @@ production:
   script:
     - setup_docker
     - cleanup_production
+    - deploy_production_vue
     - deploy_production_vue
   environment:
     name: production
@@ -123,6 +136,16 @@ stop_production:
       --net='proxied' \
       --name $PRODUCTION_CONTAINER_NAME \
       $CONTAINER_RELEASE_IMAGE
+  }
+   function deploy_production_old() {
+    # todo: add a weight to Vue and React to do some A/B testing?
+    docker run -d --restart='always' \
+      -l 'traefik.enable'='true' \
+      -l 'traefik.old.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/old/" \
+      -l 'traefik.old.port'="8080" \
+      --net='proxied' \
+      --name $PRODUCTION_CONTAINER_NAME \
+      $CONTAINER_RELEASE_IMAGE_OLD
   }
 
   function cleanup_production() {
