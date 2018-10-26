@@ -11,7 +11,7 @@
           Hey! I'm Nick
         </p>
         <p class="body-2 pa-1 text-xs-center">
-          I'm a recent grad of UWW interested in anything to do with technology. I'm currently keeping busy planning a wedding, working as a developer at Epic, hanging out with family and friends and working on side projects whenever I have time left over.
+          I'm a recent grad of UWW interested in anything to do with technology. I'm currently working as a developer at Epic, hanging out with family and friends and working on side projects whenever I have time left over.
         </p>
         <p class="subheader pa-1 text-xs-center">
           Check out the links below to learn more about me
