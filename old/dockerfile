@@ -1,4 +1,4 @@
-from node:alpine
+from node:alpine as build
 
 WORKDIR /usr/src/app
 
@@ -6,7 +6,18 @@ COPY ./ ./
 
 npm install
 
-EXPOSE 9000
+npm run build
 
+
+
+from node:alpine
+
+WORKDIR /usr/src/app
+
+RUN npm install -g http-server
+
+COPY from=build ./public ./
+
+EXPOSE 8080
 # Actual script to start can be overridden from `docker run`
-CMD ["app.js"]
+CMD ["http-server", "-p", "8080"]
