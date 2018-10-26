@@ -1,0 +1,12 @@
+from node:alpine
+
+WORKDIR /usr/src/app
+
+COPY ./ ./
+
+npm install
+
+EXPOSE 9000
+
+# Actual script to start can be overridden from `docker run`
+CMD ["app.js"]
