@@ -4,9 +4,9 @@ WORKDIR /usr/src/app
 
 COPY ./ ./
 
-npm install
+RUN npm install
 
-npm run build
+RUN npm run build
 
 
 
