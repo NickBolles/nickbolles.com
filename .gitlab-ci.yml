@@ -88,7 +88,6 @@ production:
     - setup_docker
     - cleanup_production
     - deploy_production_vue
-    - deploy_production_vue
   environment:
     name: production
     url: $PRODUCTION_APP_URL
