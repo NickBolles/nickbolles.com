@@ -27,11 +27,11 @@
     <v-layout row justify-center ref="linksList" class="nb main links application theme--dark pa-2">
       <v-container grid-list-sm v-sw-scene="{triggerHook:0}" v-sw-pin="{}" class="application theme--dark">
         <v-layout row wrap justify-space-around>
-          <v-btn to="/">About Me</v-btn>
-          <v-btn to="/myExperience">Experience</v-btn>
-          <v-btn to="/myKnowledge">Knowledge</v-btn>
-          <v-btn to="/myProjects">Projects</v-btn>
-          <v-btn to="/contactMe">Contact Me</v-btn>
+          <v-btn to="/" nuxt>About Me</v-btn>
+          <v-btn to="/myExperience" nuxt>Experience</v-btn>
+          <v-btn to="/myKnowledge" nuxt>Knowledge</v-btn>
+          <v-btn to="/myProjects" nuxt>Projects</v-btn>
+          <v-btn to="/contactMe" nuxt>Contact Me</v-btn>
         </v-layout>
       </v-container>
     </v-layout>

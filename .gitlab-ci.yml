@@ -61,7 +61,7 @@ build_docker:
     refs:
       - master
       
-build_docker_old:
+.build_docker_old:
   image: docker:git
   stage: release
   script:
