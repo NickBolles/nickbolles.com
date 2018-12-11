@@ -193,7 +193,7 @@ export default class MainComponent extends Vue {
   }
 
   private updateAvatarHeight(): void {
-    const percent: number = this.$vuetify.breakpoint.xs ? 25 : 50;
+    const percent: number = this.$vuetify.breakpoint.xs ? 33 : 50;
     this.avatarHeight = this.$vuetify.breakpoint.height * (percent / 100);
   }
   //#endregion
@@ -229,7 +229,7 @@ a {
     overflow: auto;
 
     &.avatar {
-      div {
+      .v-avatar {
         position: relative;
         top: -32px;
       }
