@@ -305,7 +305,7 @@ a {
 }
 
 // Breakpoints for the buttons to all fit
-@media (max-width: 700) {
+@media all and (max-width: 700) {
   .links {
     padding: 0;
     .container {
