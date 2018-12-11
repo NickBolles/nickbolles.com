@@ -26,7 +26,6 @@ module.exports = {
   modules: [
     "~/modules/typescript.js",
     '@nuxtjs/pwa',
-    '@nuxtjs/moment',
     '@nuxtjs/vuetify',
     '@nuxtjs/webpackmonitor',
     ['@nuxtjs/google-analytics', {
