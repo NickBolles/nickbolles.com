@@ -25,7 +25,9 @@
       </v-layout>
     </v-layout>
     <v-layout row justify-center ref="linksList" class="nb main links application theme--dark pa-2">
-      <v-container grid-list-sm v-sw-scene="{triggerHook:0}" v-sw-pin="{}" class="application theme--dark">
+      <v-container v-bind="{ [`grid-list-sm`]: $vuetify.breakpoint.mdAndUp, [`grid-list-xs`]: $vuetify.breakpoint.smAndDown }" 
+              v-sw-scene="{triggerHook:0}" v-sw-pin="{}" 
+              class="application theme--dark">
         <v-layout row wrap justify-space-around>
           <v-btn to="/" nuxt>About Me</v-btn>
           <v-btn to="/myExperience" nuxt>Experience</v-btn>
@@ -223,6 +225,8 @@ a {
 
   &.main {
     z-index: 3;
+    max-width: 100vw;
+    overflow: auto;
 
     &.avatar {
       div {
@@ -289,12 +293,24 @@ a {
   p {
     margin: 8px;
   }
+  .pa1 {
+    padding: 2px !important;
+  }
+  .pa2 {
+    padding: 4px !important;
+  }
+  .pa3 {
+    padding: 8px !important;
+  }
 }
 
 // Breakpoints for the buttons to all fit
-@media (max-width: 700px) and (min-width: 500px) {
+@media (max-width: 700) {
   .links {
     padding: 0;
+    .container {
+      padding: 4px 0 0;
+    }
     .btn {
       min-width: initial;
       font-size: 12px;
