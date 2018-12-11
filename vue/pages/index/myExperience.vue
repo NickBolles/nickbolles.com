@@ -42,7 +42,6 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "nuxt-class-component";
-import * as moment from "moment";
 
 @Component({})
 export default class MyExperienceComponent extends Vue {}

@@ -3,7 +3,10 @@
     <v-layout column align-center class="nb main landing section application theme--dark" v-bind:style="contentStyle" align>
       <div class="pb-5 px-5 nb main avatar">
         <v-avatar v-bind:size="avatarHeight + 'px'" v-parallax="parallaxMult">
-          <img src="/main-square.webp" alt="An Awesome Picture of me" v-bind:style="avatarStyle">
+          <v-img src="/NickBolles.jpg" srcSet="/NickBolles.webp 2x" :style="avatarStyle" alt="An Awesome Picture of me" onLoad="onLoaded">
+            <div class="fill-height bottom-gradient"></div>
+          </v-img>
+          <!-- <img src="/main-square.webp" alt="An Awesome Picture of me" v-bind:style="avatarStyle"> -->
         </v-avatar>
       </div>
       <v-layout class="nb main intro" column align-center justify-center>
@@ -188,7 +191,7 @@ export default class MainComponent extends Vue {
   }
 
   private updateAvatarHeight(): void {
-    const percent: number = 50; /*this.$vuetify.breakpoint.xs ? 25 : */
+    const percent: number = this.$vuetify.breakpoint.xs ? 25 : 50;
     this.avatarHeight = this.$vuetify.breakpoint.height * (percent / 100);
   }
   //#endregion

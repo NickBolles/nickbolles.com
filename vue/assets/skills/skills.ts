@@ -2,8 +2,6 @@
 
 // swift, c#, MUMPS, VB6, Kendo UI
 
-import * as moment from "moment";
-
 export enum SkillType {
     Platform = 0,
     Build_Tool = 1,

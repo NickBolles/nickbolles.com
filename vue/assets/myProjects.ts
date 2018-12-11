@@ -1,4 +1,3 @@
-import * as moment from "moment";
 import {
     AngularJS,
     Bower,
@@ -32,8 +31,8 @@ export interface IProject {
     description?: Array<string | Array<string>>;
     status: Statuses;
     skills: ISkill[];
-    startDate: moment.Moment;
-    endDate: moment.Moment;
+    startDate: Date;
+    endDate: Date;
     url?: string;
 }
 
@@ -42,8 +41,8 @@ export function newIProject(): IProject {
         name: "",
         status: Statuses.Completed,
         skills: [],
-        startDate: moment(),
-        endDate: moment()
+        startDate: new Date(),
+        endDate: new Date()
     };
 }
 
@@ -78,8 +77,8 @@ export const myProjects: IProject[] = [
             Git,
             VSCode
         ],
-        startDate: moment("01/2018", "MM/YYY"),
-        endDate: moment("04/2018", "MM/YYY"),
+        startDate: new Date(2018,0),
+        endDate: new Date(2018,3),
         status: Statuses.Completed
     },
     {
@@ -107,8 +106,8 @@ export const myProjects: IProject[] = [
             Yarn,
             VSCode
         ],
-        startDate: moment("04/2018", "MM/YYY"),
-        endDate: moment("04/2018", "MM/YYY"),
+        startDate: new Date(2018,3),
+        endDate: new Date(2018, 3),
         status: Statuses.In_Progress
     },
 
@@ -122,7 +121,7 @@ export const myProjects: IProject[] = [
                 "Cordova to run as a hybrid app on all major platforms. At first it was a JQuery Mobile app, then an angular js app",
                 "then I migrated between about 3 UI frameworks, landing on angular material."
             ],
-            "That's a lot of re-writing code! Yes it was, but I mostly just wanted to learn as much as I could, so I didn't mind.",
+            "It was a ton of re-writing, but I mostly just wanted to learn as much as I could, and learn to do it right",
             [
                 "Four-see is an app for students to put their assignments into and do a deeper analysis of their grade.",
                 "It would show a range of the grade that was still possible to achieve as the course neared it's end.",
@@ -151,8 +150,8 @@ export const myProjects: IProject[] = [
             NPM,
             Webstorm
         ],
-        startDate: moment("04/2015", "MM/YYY"),
-        endDate: moment("01/2017", "MM/YYY"),
+        startDate: new Date(2015,3),
+        endDate:new Date(2017 ,0),
         status: Statuses.On_The_Back_Burner
     },
     {
@@ -176,8 +175,8 @@ export const myProjects: IProject[] = [
             ],
             "This is really the project that got me to get a glimpse of how powerful Web Development can be."
         ],
-        startDate: moment("05/2014", "MM/YYY"),
-        endDate: moment("05/2014", "MM/YYY"),
+        startDate: new Date(2014,4),
+        endDate: new Date(2014,4),
         status: Statuses.Obsolete
     },
 ];
