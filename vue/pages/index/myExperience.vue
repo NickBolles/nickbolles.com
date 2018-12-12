@@ -1,7 +1,8 @@
 <template>
   <v-layout
     id="experience"
-    style="width: 100%;"
+    class="ma-3"
+    style="width: 100%; overflow auto"
     column
     align-center
     justify-center
@@ -11,31 +12,46 @@
     </h1>
     <v-layout
       row
-      class="py-5 no-flex"
+      class="no-flex"
     >
-      <v-responsive
-        aspect-ratio="1"
-        v-for="link in links"
-        :key="link.title"
+      <v-container
+        grid-list-xs
+        justify-center
       >
-        <v-btn
-          large
-          :href="link.href"
-          class="btn nb ext-link darken-2"
-          color="primary"
+        <v-layout
+          row
+          wrap
+          justify-space-around
         >
-          <v-layout
-            column
-            style="align-items: center;"
+          <!-- <v-responsive
+            aspect-ratio="1"
+            max-height="200px"
+            max-width="200px"
+            v-for="link in links"
+            :key="link.title"
+          > -->
+          <v-btn
+            large
+            :href="link.href"
+            class="btn nb ext-link darken-2"
+            color="primary"
+            v-for="link in links"
+            :key="link.title"
           >
-            <img
-              :src="link.icon"
-              :alt="link.alt"
-            />
-            <h1 class="title">{{link.title}}</h1>
-          </v-layout>
-        </v-btn>
-      </v-responsive>
+            <v-layout
+              column
+              style="align-items: center;"
+            >
+              <img
+                :src="link.icon"
+                :alt="link.alt"
+              />
+              <h1 class="title">{{link.title}}</h1>
+            </v-layout>
+          </v-btn>
+          <!-- </v-responsive> -->
+        </v-layout>
+      </v-container>
     </v-layout>
 
     <v-layout
@@ -103,8 +119,6 @@
       display: flex;
       flex-direction: column;
       height: initial;
-      max-width: 25vw;
-      max-height: 25vh;
 
       img {
         height: 48px;

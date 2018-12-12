@@ -12,15 +12,16 @@
       v-bind:style="contentStyle"
       align
     >
-      <div class="pb-5 px-5 nb main avatar">
+      <div class="nb main avatar">
         <v-avatar
+          :style="avatarStyle"
           v-bind:size="avatarHeight + 'px'"
           v-parallax="parallaxMult"
+          v-parallax.absY="parallaxMult"
         >
           <v-img
             src="/NickBolles.jpg"
             srcSet="/NickBolles.webp 2x"
-            :style="avatarStyle"
             alt="An Awesome Picture of me"
             @load="onLoaded"
           >
@@ -149,15 +150,15 @@
     linksHeight: number = 0;
     avatarHeight: number = 0;
 
-    get avatarStyle(): any {
-      return {
-        marginTop: `${-1 * this.parallaxMult * 2 * this.avatarHeight}px`
-      };
-    }
-
     get introStyle(): any {
       return {
         boxShadow: `0px -21px 66px -4px ${this.$vuetify.theme.primary}`
+      };
+    }
+
+    get avatarStyle() {
+      return {
+        marginTop: `${(this.parallaxMult - 1) * this.avatarHeight}px`
       };
     }
 
@@ -293,9 +294,9 @@
 
       &.avatar {
         text-align: center;
+        overflow: hidden;
         .v-avatar {
           position: relative;
-          top: -56px;
         }
         * {
           transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
@@ -319,6 +320,11 @@
         min-width: 48px;
         width: 100%;
         align-self: center;
+        padding: 0;
+        font-size: 12px !important;
+        .container {
+          padding: 4px 0 0;
+        }
         a {
           opacity: 0;
         }
@@ -370,15 +376,17 @@
     .pa3 {
       padding: 8px !important;
     }
+    .pa4 {
+      padding: 12px !important;
+    }
+    .pa5 {
+      padding: 24px !important;
+    }
   }
 
   // Breakpoints for the buttons to all fit
   @media screen and (max-width: 700) {
     .links {
-      padding: 0;
-      .container {
-        padding: 4px 0 0;
-      }
       .btn {
         min-width: initial;
         font-size: 12px;
