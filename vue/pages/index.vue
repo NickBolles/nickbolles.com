@@ -230,6 +230,7 @@ a {
     max-width: 800px;
 
     &.avatar {
+      text-align: center;
       .v-avatar {
         position: relative;
         top: -56px;
@@ -275,7 +276,7 @@ a {
   z-index: 100;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .display-3 {
     font-size: 28px !important;
     font-weight: 400;
@@ -308,7 +309,7 @@ a {
 }
 
 // Breakpoints for the buttons to all fit
-@media all and (max-width: 700) {
+@media screen and (max-width: 700) {
   .links {
     padding: 0;
     .container {
