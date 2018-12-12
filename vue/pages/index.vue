@@ -21,7 +21,7 @@
         >
           <v-img
             src="/NickBolles.jpg"
-            srcSet="/NickBolles.webp 2x"
+            srcset="/NickBolles.webp 2x"
             alt="An Awesome Picture of me"
             @load="onLoaded"
           >
