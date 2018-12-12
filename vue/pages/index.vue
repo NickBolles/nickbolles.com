@@ -19,15 +19,9 @@
           v-parallax="parallaxMult"
           v-parallax.absY="parallaxMult"
         >
-          <v-img
-            src="/NickBolles.jpg"
-            srcset="/NickBolles.webp 2x"
-            alt="An Awesome Picture of me"
-            @load="onLoaded"
-          >
-            <div class="fill-height bottom-gradient"></div>
+          <v-img :src="src">
+              <div class="fill-height bottom-gradient"></div>
           </v-img>
-          <!-- <img src="/main-square.webp" alt="An Awesome Picture of me" v-bind:style="avatarStyle"> -->
         </v-avatar>
       </div>
       <v-layout
@@ -72,26 +66,31 @@
             to="/"
             nuxt
             color="primary"
+            class="elevation-10"
           >About Me</v-btn>
           <v-btn
             to="/myExperience"
             nuxt
             color="primary"
+            class="elevation-10"
           >Experience</v-btn>
           <v-btn
             to="/myKnowledge"
             nuxt
             color="primary"
+            class="elevation-10"
           >Knowledge</v-btn>
           <v-btn
             to="/myProjects"
             nuxt
             color="primary"
+            class="elevation-10"
           >Projects</v-btn>
           <v-btn
             to="/contactMe"
             nuxt
             color="primary"
+            class="elevation-10"
           >Contact Me</v-btn>
         </v-layout>
       </v-container>
@@ -129,6 +128,7 @@
   import { TweenLite, TimelineLite, Sine } from "gsap";
   import * as scrollTo from "gsap/ScrollToPlugin";
   import { Route } from "vue-router";
+  import hasWebPSupport from "~/assets/hasWebPSupport";
 
   @Component({})
   export default class MainComponent extends Vue {
@@ -141,6 +141,7 @@
       content: HTMLElement;
     };
     loaded = false;
+    src = ""
 
     timeline: TimelineLite = new TimelineLite();
     staggerDelay = 0.3;
@@ -170,6 +171,7 @@
 
     //#region Vue Hooks
     mounted(): void {
+      this.preloadImage();
       this.setupTimeline();
       this.onResize();
       this.onRouteUpdate(this.$route);
@@ -198,6 +200,17 @@
 
     //#region Methods
     //#region Init Methods
+
+    private preloadImage() {
+      if (hasWebPSupport()) {
+        this.src = "/NickBolles.webp";
+      } else {
+        this.src = "/NickBolles.jpg";
+      }
+      const el = new Image();
+      el.onload = () => this.onLoaded();
+      el.src = this.src;
+    }
 
     private setupTimeline(): void {
       this.timeline.pause();
@@ -297,6 +310,14 @@
         overflow: hidden;
         .v-avatar {
           position: relative;
+          .nb.image {
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+          }
         }
         * {
           transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
