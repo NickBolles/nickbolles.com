@@ -67,7 +67,7 @@ export default class ProjectSummaryComponent extends Vue {
       // amber darken-1
     } else if (status === Statuses.Completed) {
       return colors.green.darken3;
-      // green daken 3
+      // green darken 3
     } else if (status === Statuses.On_The_Back_Burner) {
       return colors.deepOrange.darken2;
       // deep-orange darken-3

@@ -35,7 +35,7 @@ export function toIDString(e: any, v: any): string {
   return `${enumToString(e, v)} [${enumToID(e, v)}]`;
 }
 
-const SentanceCaseRegex: RegExp = /(^\w{1}|\.\s*\w{1})/gi;
+const SentenceCaseRegex: RegExp = /(^\w{1}|\.\s*\w{1})/gi;
 
 // todo: add seperate labels for enums? (this would go into the pipe functions though, not here)
 function sentenceCase(str: any = ""): string {
@@ -48,7 +48,7 @@ function sentenceCase(str: any = ""): string {
     .replace(/_/g, " ")
     .toLowerCase()
     // replace first Char of sentence with uppercase version
-    .replace(SentanceCaseRegex, function (toReplace: string): string {
+    .replace(SentenceCaseRegex, function (toReplace: string): string {
       return toReplace.toUpperCase();
     });
 }

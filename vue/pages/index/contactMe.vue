@@ -48,7 +48,7 @@ export default class ContactComponent extends Vue {
   _success: boolean;
   get canChangeMode(): boolean {
     return true;
-    //     // allways change on the first change
+    //     // always change on the first change
     //     if (this.canChangeAt === -1) {
     //       console.log("First change, changing");
     //       this.cacheMode(); // reset
