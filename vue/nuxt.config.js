@@ -26,7 +26,7 @@ module.exports = {
   modules: [
     "nuxt-ts-module",
     '@nuxtjs/pwa',
-    '@nuxtjs/vuetify',
+    '~/modules/vuetify',
     '@nuxtjs/webpackmonitor',
     ['@nuxtjs/google-analytics', {
       id: 'UA-55275349-7'

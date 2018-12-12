@@ -36,16 +36,16 @@
         align-center
         justify-center
       >
-        <p class="display-2 pa-3 text-xs-center">
+        <p class="display-2 pa-3 text-xs-center" style="opacity: 0;">
           Hey! I'm Nick
         </p>
-        <p class="body-2 pa-1 text-xs-center">
+        <p class="body-2 pa-1 text-xs-center" style="opacity: 0;">
           I'm a recent grad of UWW interested in anything to do with technology. I'm currently working as a developer at Epic, hanging out with family and friends and working on side projects whenever I have time left over.
         </p>
-        <p class="subheader pa-1 text-xs-center">
+        <p class="subheader pa-1 text-xs-center" style="opacity: 0;">
           Check out the links below to learn more about me
         </p>
-        <p class="headline pa-2 text-xs-center">
+        <p class="headline pa-2 text-xs-center" style="opacity: 0;">
           Thanks for checking out my website!
         </p>
       </v-layout>
@@ -126,8 +126,8 @@
     Provide,
     Watch
   } from "vue-property-decorator";
-  import { TweenLite, TimelineLite, Sine } from "gsap/all";
-  import * as scrollTo from "../node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin";
+  import { TweenLite, TimelineLite, Sine } from "gsap";
+  import * as scrollTo from "gsap/ScrollToPlugin";
   import { Route } from "vue-router";
 
   @Component({})

@@ -3,7 +3,7 @@
 */
 
 import { Controller, Scene } from "scrollwizardry";
-import { TimelineMax, TweenMax } from "gsap/all";
+import { TimelineMax, TweenMax } from "gsap";
 
 // let TimelineMax: any = TimelineLite;
 // let TweenMax: any = TweenLite;
