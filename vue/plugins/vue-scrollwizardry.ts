@@ -2,13 +2,12 @@
   eslint no-underscore-dangle: 0, max-len: 0, prefer-destructuring: 0, no-nested-ternary: 0
 */
 
-import * as ScrollWizardry from "scrollwizardry";
-import { TimelineMax, TweenMax } from "gsap";
+import { Controller, Scene } from "scrollwizardry";
+import { TimelineMax, TweenMax } from "gsap/all";
 
 // let TimelineMax: any = TimelineLite;
 // let TweenMax: any = TweenLite;
 
-const { Controller, Scene } = ScrollWizardry;
 
 // tslint:disable:typedef
 export const defaultOptions = {

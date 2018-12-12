@@ -126,9 +126,9 @@
     Provide,
     Watch
   } from "vue-property-decorator";
-  import { TweenLite, TimelineLite, Sine } from "gsap";
+  import { TweenLite, TimelineLite, Sine } from "gsap/all";
   import * as scrollTo from "../node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin";
-  import { Route } from "vue-router/types/router";
+  import { Route } from "vue-router";
 
   @Component({})
   export default class MainComponent extends Vue {

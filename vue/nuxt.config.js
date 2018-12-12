@@ -24,7 +24,7 @@ module.exports = {
   */
   loading: { color: "#3B8070" },
   modules: [
-    "~/modules/typescript.js",
+    "nuxt-ts-module",
     '@nuxtjs/pwa',
     '@nuxtjs/vuetify',
     '@nuxtjs/webpackmonitor',
@@ -39,11 +39,12 @@ module.exports = {
     { src: '~/plugins/vue-bar.js', ssr: false }
   ],
   css: [
-    'node_modules/vuetify/dist/vuetify.min.css',
-    // 'node_modules/vuetify/src/stylus/app.styl',
+    // 'node_modules/vuetify/dist/vuetify.min.css',
+    'node_modules/vuetify/src/stylus/main.styl',
     // '~/assets/style/app.styl'
   ],
   vuetify: {
+    treeShake: true,
     css: false,
     theme: {
       primary: '#3B8070',
@@ -58,7 +59,9 @@ module.exports = {
     //   VApp: require('vuetify/es5/components/VApp').default,
     //   VBtn: require('vuetify/es5/components/VBtn').default,
     //   VAvatar: require('vuetify/es5/components/VAvatar').default,
+    //   VImg: require('vuetify/es5/components/VImg').default,
     //   VIcon: require('vuetify/es5/components/VIcon').default,
+    //   VCard: require('vuetify/es5/components/VCard').default,
     //   VChip: require('vuetify/es5/components/VChip').default,
     //   VForm: require('vuetify/es5/components/VForm').default,
     //   VTextField: require('vuetify/es5/components/VTextField').default,
@@ -75,13 +78,13 @@ module.exports = {
   build: {
     extractCSS: true,
     ssr: true,
-    vendor: [
-      "axios",
-      "vuex-class",
-      "nuxt-class-component",
-      "babel-polyfill",
-      "vue-parallax-js"
-    ],
+    // vendor: [
+    //   "axios",
+    //   "vuex-class",
+    //   "nuxt-class-component",
+    //   "babel-polyfill",
+    //   "vue-parallax-js"
+    // ],
     extend(config, ctx) {
       // if (ctx.isServer) {
       //   config.externals = [

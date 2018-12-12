@@ -18,15 +18,12 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "./assets": [
-        "~assets"
+      "~/assets/*": [
+        "./assets/*"
       ],
-      "~/components": [
-        "./components"
-      ],
-      "~/static": [
-        "./static"
-      ],
+      "~/components/*": [
+        "./components/*"
+      ]
     }
   },
   "exclude": [
