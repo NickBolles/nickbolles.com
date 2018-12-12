@@ -27,7 +27,7 @@
     <v-layout row justify-center ref="linksList" class="nb main links application theme--dark pa-2">
       <v-container v-bind="{ [`grid-list-sm`]: $vuetify.breakpoint.mdAndUp, [`grid-list-xs`]: $vuetify.breakpoint.smAndDown }" 
               v-sw-scene="{triggerHook:0}" v-sw-pin="{}" 
-              class="application theme--dark">
+              class="application theme--dark" justify-center>
         <v-layout row wrap justify-space-around>
           <v-btn to="/" nuxt>About Me</v-btn>
           <v-btn to="/myExperience" nuxt>Experience</v-btn>
@@ -218,6 +218,7 @@ a {
   &.section {
     height: 100vh;
     max-height: 100vh;
+    width: 100%;
     max-width: 1440px;
     transition: height, width, max-height,
       max-width 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -225,13 +226,13 @@ a {
 
   &.main {
     z-index: 3;
-    max-width: 100vw;
-    overflow: auto;
+    width: 100%;
+    max-width: 800px;
 
     &.avatar {
       .v-avatar {
         position: relative;
-        top: -32px;
+        top: -56px;
       }
       * {
         transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
@@ -241,11 +242,13 @@ a {
 
     &.landing {
       align-self: center;
-      max-width: 800px;
+      width: 100%;
     }
 
     &.intro {
       z-index: 5;
+      width: 100%;
+      overflow: auto;
     }
 
     &.links {
