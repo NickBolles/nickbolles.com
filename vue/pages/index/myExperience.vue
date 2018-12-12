@@ -29,9 +29,9 @@
     <v-layout column align-center justify-center>
       <h4>Also check out</h4>
       <v-layout align-center justify-center align-content-center="">
-        <v-btn to="/myKnowledge" nuxt>Knowledge</v-btn>
+        <v-btn to="/myKnowledge" nuxt color="primary">Knowledge</v-btn>
         <v-flex>and</v-flex>
-        <v-btn to="/myProjects" nuxt>Projects</v-btn>
+        <v-btn to="/myProjects" nuxt color="primary">Projects</v-btn>
       </v-layout>
     </v-layout>
     <v-flex></v-flex>

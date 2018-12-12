@@ -30,10 +30,10 @@
               class="application theme--dark" justify-center>
         <v-layout row wrap justify-space-around>
           <v-btn to="/" nuxt>About Me</v-btn>
-          <v-btn to="/myExperience" nuxt>Experience</v-btn>
-          <v-btn to="/myKnowledge" nuxt>Knowledge</v-btn>
-          <v-btn to="/myProjects" nuxt>Projects</v-btn>
-          <v-btn to="/contactMe" nuxt>Contact Me</v-btn>
+          <v-btn to="/myExperience" nuxt color="primary">Experience</v-btn>
+          <v-btn to="/myKnowledge" nuxt color="primary">Knowledge</v-btn>
+          <v-btn to="/myProjects" nuxt color="primary">Projects</v-btn>
+          <v-btn to="/contactMe" nuxt color="primary">Contact Me</v-btn>
         </v-layout>
       </v-container>
     </v-layout>
