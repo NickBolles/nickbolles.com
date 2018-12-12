@@ -13,7 +13,8 @@
                         </v-text-field>
                         <v-layout column align-center>
                             <h1 class="subheading warning--text">{{errorMessage}}</h1>
-                            <v-btn @click="submit" key="focus">
+                            <v-btn @click="submit" key="focus" color="primary"
+                                    class="elevation-10">
                                 Submit
                             </v-btn>
                         </v-layout>

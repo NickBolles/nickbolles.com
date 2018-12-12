@@ -33,7 +33,7 @@
           <v-btn
             large
             :href="link.href"
-            class="btn nb ext-link darken-2"
+            class="btn nb ext-link darken-2 elevation-20"
             color="primary"
             v-for="link in links"
             :key="link.title"
@@ -70,12 +70,14 @@
           to="/myKnowledge"
           nuxt
           color="primary"
+            class="elevation-10"
         >Knowledge</v-btn>
         <v-flex>and</v-flex>
         <v-btn
           to="/myProjects"
           nuxt
           color="primary"
+            class="elevation-10"
         >Projects</v-btn>
       </v-layout>
     </v-layout>
