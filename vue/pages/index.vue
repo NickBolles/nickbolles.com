@@ -19,7 +19,7 @@
           v-parallax="parallaxMult"
           v-parallax.absY="parallaxMult"
         >
-          <v-img :src="src">
+          <v-img :src="src" lazy-src="/NickBolles-preload.png">
               <div class="fill-height bottom-gradient"></div>
           </v-img>
         </v-avatar>
@@ -209,7 +209,7 @@
       }
       const el = new Image();
       el.onload = () => this.onLoaded();
-      el.src = this.src;
+      el.src = "/NickBolles-preload.png";
     }
 
     private setupTimeline(): void {
