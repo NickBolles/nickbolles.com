@@ -1,4 +1,3 @@
-
 const nodeExternals = require('webpack-node-externals')
 const ScrollBehavior = require('./modules/scrollbehavior');
 
@@ -17,6 +16,8 @@ module.exports = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel="canonical", href="https://www.nickbolles.com" }
+
     ]
   },
   /*
