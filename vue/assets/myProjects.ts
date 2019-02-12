@@ -60,10 +60,13 @@ export const myProjects: IProject[] = [
       [
         "I use Nuxt.js for server side rendering, code splitting, PWA functionality and the ease of development it offers,",
         "Vuetify for beautiful base components and typography, Typescript for modern, type safe and elegant code.",
-        "An AWS Lambda - Go routine for the contact me email",
-        "and for the first time VS Code as my editor"
+        "An AWS Lambda - Go routine for the contact me email"
       ],
-      ["It's also full fledged PWA. Just try turning off your internet and reloading the page, or adding it to your home screen!"]
+      ["It's also full fledged PWA. Just try turning off your internet and reloading the page, or adding it to your home screen!"],
+      [
+        "For deployment I use my Gitlab server (https://gitlab.dev.nickbolles.com/nbolles/www_nickbolles_com) to host the code and",
+        "run CI/CD on every commit which lints, builds, tests and even automatically deploys to the production site on every commit."
+      ]
     ],
     skills: [
       Typescript,
@@ -93,8 +96,7 @@ export const myProjects: IProject[] = [
       [
         "I use next.js for server side rendering, code splitting and the ease of development it offers,",
         "Vuetify for beautiful base components and typography, Typescript for modern, type safe and elegant code",
-        "an AWS Lambda - Go routine for the contact me email",
-        "and for the first time VS Code as my editor"
+        "an AWS Lambda - Go routine for the contact me email"
       ]
     ],
     skills: [
