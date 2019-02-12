@@ -47,6 +47,7 @@
                 :alt="link.alt"
               />
               <h1 class="title">{{link.title}}</h1>
+              <h6 v-if="link.subtitle" class="caption">{{link.subtitle}}</h6>
             </v-layout>
           </v-btn>
           <!-- </v-responsive> -->
@@ -96,7 +97,8 @@
         href: "/Nicholas Bolles Resume.pdf",
         icon: "/file-document.svg",
         alt: "Resume Icon",
-        title: "Resume"
+        title: "Resume",
+        subtitle: "(buggy in Chrome, try using Firefox or Edge)"
       },
       {
         href: "https://www.linkedin.com/in/nickbolles",
