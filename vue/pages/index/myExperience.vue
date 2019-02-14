@@ -36,7 +36,7 @@
               :alt="link.alt"
             />
             <h1 class="title">{{link.title}}</h1>
-            <h6 v-if="link.subtitle" class="caption">{{link.subtitle}}</h6>
+            <h6 v-if="link.subtitle" class="subheading text--disabled">{{link.subtitle}}</h6>
           </v-layout>
         </v-btn>
       </v-layout>
@@ -119,6 +119,12 @@
 
         max-width: 48px;
         margin-bottom: 8px;
+      }
+
+      .subheading {
+        white-space: pre-wrap;
+        font-size: 8px !important;
+        text-align: center;
       }
     }
   }
