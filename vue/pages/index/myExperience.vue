@@ -14,39 +14,32 @@
       row
       class="no-flex"
     >
-      <v-container
-        grid-list-xs
-        justify-center
+      <v-layout
+        row
+        wrap
+        justify-space-around
       >
-        <v-layout
-          row
-          wrap
-          justify-space-around
+        <v-btn
+          v-for="link in links"
+          :key="link.title"
+          large
+          :href="link.href"
+          class="btn nb ext-link darken-2 elevation-20"
+          color="primary"
         >
-           <v-flex 
-              v-for="link in links"
-              :key="link.title">
-              <v-btn
-                large
-                :href="link.href"
-                class="btn nb ext-link darken-2 elevation-20"
-                color="primary"
-              >
-                <v-layout
-                  column
-                  style="align-items: center;"
-                >
-                  <img
-                    :src="link.icon"
-                    :alt="link.alt"
-                  />
-                  <h1 class="title">{{link.title}}</h1>
-                  <h6 v-if="link.subtitle" class="caption">{{link.subtitle}}</h6>
-                </v-layout>
-              </v-btn>
-            </v-flex>
-        </v-layout>
-      </v-container>
+          <v-layout
+            column
+            style="align-items: center;"
+          >
+            <img
+              :src="link.icon"
+              :alt="link.alt"
+            />
+            <h1 class="title">{{link.title}}</h1>
+            <h6 v-if="link.subtitle" class="caption">{{link.subtitle}}</h6>
+          </v-layout>
+        </v-btn>
+      </v-layout>
     </v-layout>
 
     <v-layout
@@ -113,6 +106,9 @@
 <style lang="scss" scoped>
   .nb {
     &.ext-link {
+      flex: 1; // Keep them all the same size
+      min-width: 150px; // Keep them from getting to small
+
       padding: 2em;
       display: flex;
       flex-direction: column;
