@@ -23,34 +23,28 @@
           wrap
           justify-space-around
         >
-          <!-- <v-responsive
-            aspect-ratio="1"
-            max-height="200px"
-            max-width="200px"
-            v-for="link in links"
-            :key="link.title"
-          > -->
-          <v-btn
-            large
-            :href="link.href"
-            class="btn nb ext-link darken-2 elevation-20"
-            color="primary"
-            v-for="link in links"
-            :key="link.title"
-          >
-            <v-layout
-              column
-              style="align-items: center;"
-            >
-              <img
-                :src="link.icon"
-                :alt="link.alt"
-              />
-              <h1 class="title">{{link.title}}</h1>
-              <h6 v-if="link.subtitle" class="caption">{{link.subtitle}}</h6>
-            </v-layout>
-          </v-btn>
-          <!-- </v-responsive> -->
+           <v-flex 
+              v-for="link in links"
+              :key="link.title">
+              <v-btn
+                large
+                :href="link.href"
+                class="btn nb ext-link darken-2 elevation-20"
+                color="primary"
+              >
+                <v-layout
+                  column
+                  style="align-items: center;"
+                >
+                  <img
+                    :src="link.icon"
+                    :alt="link.alt"
+                  />
+                  <h1 class="title">{{link.title}}</h1>
+                  <h6 v-if="link.subtitle" class="caption">{{link.subtitle}}</h6>
+                </v-layout>
+              </v-btn>
+            </v-flex>
         </v-layout>
       </v-container>
     </v-layout>
