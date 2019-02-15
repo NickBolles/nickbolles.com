@@ -14,6 +14,9 @@ module.exports = {
       { hid: "viewport", name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Nicks Website" }
     ],
+    noscript: [
+      { innerHTML: '<div style="position: absolute; left:0;right:0,top:0;bottom:0;" class="application theme--dark layout container"><h1 class="primary--text">Please Enable Javascript to view my site</h1></div>', body: true }
+    ],
     link: [
       { hid: "favicon", rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { hid: "canonical", rel: "canonical", href: "https://www.nickbolles.com" }
@@ -46,6 +49,7 @@ module.exports = {
   ],
   vuetify: {
     treeShake: true,
+    materialIcons: false,
     css: false,
     theme: {
       primary: '#3B8070',
