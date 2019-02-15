@@ -36,7 +36,10 @@
               :alt="link.alt"
             />
             <h1 class="title">{{link.title}}</h1>
-            <h6 v-if="link.subtitle" class="subheading text--disabled">{{link.subtitle}}</h6>
+            <h6
+              v-if="link.subtitle"
+              class="subheading text--disabled"
+            >{{link.subtitle}}</h6>
           </v-layout>
         </v-btn>
       </v-layout>
@@ -58,14 +61,14 @@
           to="/myKnowledge"
           nuxt
           color="primary"
-            class="elevation-10"
+          class="elevation-10"
         >Knowledge</v-btn>
         <v-flex>and</v-flex>
         <v-btn
           to="/myProjects"
           nuxt
           color="primary"
-            class="elevation-10"
+          class="elevation-10"
         >Projects</v-btn>
       </v-layout>
     </v-layout>
@@ -98,6 +101,12 @@
         icon: "/github-box.svg",
         alt: "Github Icon",
         title: "Github"
+      },
+      {
+        href: "https://gitlab.dev.nickbolles.com/explore/projects",
+        icon: "/gitlab.svg",
+        alt: "Github Icon",
+        title: "My Gitlab Server"
       }
     ];
   }
