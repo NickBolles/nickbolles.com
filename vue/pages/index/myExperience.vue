@@ -130,10 +130,13 @@
         margin-bottom: 8px;
       }
 
-      .subheading {
+      h1 {
         white-space: pre-wrap;
-        font-size: 8px !important;
         text-align: center;
+      }
+
+      .subheading {
+        font-size: 8px !important;
       }
     }
   }
