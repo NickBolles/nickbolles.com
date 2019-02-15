@@ -12,7 +12,7 @@
     </h1>
     <v-layout
       row
-      class="no-flex"
+      class="no-flex py-5"
     >
       <v-layout
         row
