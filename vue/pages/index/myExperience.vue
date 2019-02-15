@@ -130,7 +130,8 @@
         margin-bottom: 8px;
       }
 
-      h1 {
+      h1,
+      .subheading {
         white-space: pre-wrap;
         text-align: center;
       }
