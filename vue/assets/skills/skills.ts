@@ -1,3 +1,6 @@
+
+    import { enumToString } from "../EnumUtils";
+
 // todo: http://konpa.github.io/devicon/
 
 // swift, c#, MUMPS, VB6, Kendo UI
@@ -9,6 +12,13 @@ export enum SkillType {
     Language = 3,
     Framework = 4,
     Library = 5
+}
+
+export function SkillTypePluralize(skill: SkillType) {
+    if (skill === SkillType.Library) {
+        return "Libraries";
+    }
+    return enumToString(SkillType, skill) + "s";
 }
 
 export type SkillTypes = keyof SkillType;

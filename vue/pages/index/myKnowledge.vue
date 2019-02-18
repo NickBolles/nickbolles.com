@@ -41,8 +41,7 @@
 <script lang="ts">
   import Vue from "vue";
   import Component from "nuxt-class-component";
-  import { ISkill, Skills, SkillType, SkillTypes } from "~/assets/skills/skills";
-  import { enumToString } from "~/assets/EnumUtils";
+  import { ISkill, Skills, SkillType, SkillTypes, SkillTypePluralize } from "~/assets/skills/skills";
   import SkillIconComponent from "~/components/skillIcon.vue";
 
   interface ISortedSkills {
@@ -65,8 +64,8 @@
   export default class ContactComponent extends Vue {
     data: ISortedSkills = data;
 
-    skillTypeName(type: number): string {
-      return enumToString(SkillType, type) + "s";
+    skillTypeName(type: SkillType): string {
+      return SkillTypePluralize(type);
     }
   }
 </script>
