@@ -1,3 +1,16 @@
+## Highlights
+Production Site: https://NickBolles.com
+
+[CI/CD (auto test and Deploy)](https://gitlab.dev.nickbolles.com/nbolles/www_nickbolles_com/pipelines)
+
+Built with:
+* Nuxt.js (Vue.js)
+* Vuetify
+* Typescript
+* Sass
+* ScrollMagic
+* VS Code
+
 ## Getting started
 
 ### The quick route with docker
