@@ -1,9 +1,11 @@
 ## Highlights
 Production Site: https://NickBolles.com
 
+Main Code [is in the vue folder](vue)
+
 [CI/CD (auto test and Deploy)](https://gitlab.dev.nickbolles.com/nbolles/www_nickbolles_com/pipelines)
 
-Built with:
+### Built with
 * Nuxt.js (Vue.js)
 * Vuetify
 * Typescript
