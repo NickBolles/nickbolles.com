@@ -128,12 +128,16 @@ stop_production:
     # todo: add a weight to Vue and React to do some A/B testing?
     docker run -d --restart='always' \
       -l 'traefik.enable'='true' \
+      -l 'traefik.default.frontend.priority'="10" \
       -l 'traefik.default.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN" \
       -l 'traefik.default.port'="8080" \
+      -l 'traefik.vue.frontend.priority'="9" \
       -l 'traefik.vue.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/vue/" \
       -l 'traefik.vue.port'="8080" \
+      -l 'traefik.portfolio.frontend.priority'="11" \
       -l 'traefik.portfolio.frontend.redirect.rule'="(.*)portfolio.nickbolles.com(.*)" \
       -l 'traefik.portfolio.frontend.redirect.replacement'="https://Gitlab.Dev.NickBolles.com/explore/projects" \
+      -l 'traefik.resume.frontend.priority'="12" \
       -l 'traefik.resume.frontend.redirect.rule'="(.*)resume.nickbolles.com(.*)" \
       -l 'traefik.resume.frontend.redirect.replacement'="https://www.nickbolles.com/Nicholas%20Bolles%20Resume.pdf" \
       --net='proxied' \
