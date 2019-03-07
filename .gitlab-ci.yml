@@ -133,7 +133,7 @@ stop_production:
       -l 'traefik.vue.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/vue/" \
       -l 'traefik.vue.port'="8080" \
       -l 'traefik.portfolio.frontend.rule'="Host:portfolio.nickbolles.com" \
-      -l 'traefik.portfolio.frontend.redirect.rule'="*" \
+      -l 'traefik.portfolio.frontend.redirect.rule'="(.*)" \
       -l 'traefik.portfolio.frontend.redirect.replacement'="https://Gitlab.Dev.NickBolles.com/explore/projects" \
       -l 'traefik.portfolio.frontend.redirect.permanent'="true" \
       --net='proxied' \
