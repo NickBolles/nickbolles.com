@@ -1,6 +1,4 @@
-# nicks
-
-> Nicks Website
+#  Nicks Website
 
 ## Build Setup
 
