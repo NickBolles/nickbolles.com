@@ -23,6 +23,7 @@ Main Code [is in the vue folder](vue)
    ```
    
 2. The app should be running and accessible at http://localhost:8080
+3. ...Wait, that was it? Well I guess sit back, relax and enjoy the site
 
 ### The long route
 1. Clone the project
