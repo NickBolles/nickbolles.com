@@ -8,7 +8,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "Nicks Website",
+    title: "Nick's Website",
     meta: [
       { hid: "charset", charset: "utf-8" },
       { hid: "viewport", name: "viewport", content: "width=device-width, initial-scale=1" },
