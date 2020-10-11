@@ -1,8 +1,5 @@
-import { StoreOptions, Module, Store } from "vuex/types";
+import { StoreOptions } from "vuex/types";
 import Vue from "vue";
-import VeeValidate from "vee-validate";
-
-Vue.use(VeeValidate);
 
 
 interface IRootState {

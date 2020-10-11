@@ -131,12 +131,12 @@
   import hasWebPSupport from "~/assets/hasWebPSupport";
 
   @Component({})
-  export default class MainComponent extends Vue {
+  class MainComponent extends Vue {
     static meta = {
       scrollTo: "#nb-content-bottom-anchor"
     };
 
-    $refs!: {
+    $refs: {
       linksList: HTMLElement;
       content: HTMLElement;
     };
@@ -153,7 +153,7 @@
 
     get introStyle(): any {
       return {
-        boxShadow: `0px -21px 66px -4px ${this.$vuetify.theme.primary}`
+        boxShadow: `0px -21px 66px -4px ${(this as any).$vuetify.theme.primary}`
       };
     }
 
@@ -269,11 +269,12 @@
     }
 
     private updateAvatarHeight(): void {
-      const percent: number = this.$vuetify.breakpoint.xs ? 33 : 50;
-      this.avatarHeight = this.$vuetify.breakpoint.height * (percent / 100);
+      const percent: number = (this as any).$vuetify.breakpoint.xs ? 33 : 50;
+      this.avatarHeight = (this as any).$vuetify.breakpoint.height * (percent / 100);
     }
     //#endregion
   }
+  export default MainComponent;
 </script>
 
 <style lang="scss">

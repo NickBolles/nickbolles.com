@@ -41,7 +41,7 @@ const ModuleAction: BindingHelper = namespace("contactMe", Action);
 const ModuleState: BindingHelper = namespace("contactMe", State);
 
 @Component({})
-export default class ContactComponent extends Vue {
+class ContactComponent extends Vue {
   isFormValid: boolean = false;
 
   canChangeAt: number = -1;
@@ -90,13 +90,15 @@ export default class ContactComponent extends Vue {
 
   submit(): void {
     this.canChangeAt = -1;
-    this.$validator.validateAll().then(result => {
+
+    (this as any).$validator.validateAll().then(result => {
       if (result) {
         this._submit();
       }
     });
   }
 }
+export default ContactComponent;
 </script>
 
 <style lang="scss" scoped>

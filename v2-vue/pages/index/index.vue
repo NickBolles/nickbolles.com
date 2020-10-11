@@ -5,16 +5,10 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "nuxt-class-component";
-// import AboutMeComponent from "./aboutMe.vue";
-import MyExperienceComponent from "./myExperience.vue";
 
-@Component({
-  components: {
-    myExperience: MyExperienceComponent
-  },
-  scrollToTop: true
-})
-export default class IndexComponent extends Vue {}
+@Component({})
+class IndexComponent extends Vue {}
+export default IndexComponent;
 </script>
 
 <style>

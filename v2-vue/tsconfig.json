@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
-    "strict": true,
+    // "strict": true,
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
@@ -28,8 +28,8 @@
     "noImplicitAny": false,
     "noImplicitThis": false,
     "removeComments": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": true,
+    // "suppressImplicitAnyIndexErrors": true,
+    // "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization" : false
 
@@ -37,7 +37,11 @@
   "types": [
     "@types/node",
     "@nuxt/types",
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
+    "nuxt-validate",
+    "vee-validate",
+    "./vue-shims.d.ts"
+
   ],
   "exclude": [
     "node_modules",

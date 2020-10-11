@@ -1,7 +1,3 @@
-const nodeExternals = require('webpack-node-externals')
-const ScrollBehavior = require('./modules/scrollbehavior');
-
-const webpack = require('webpack')
 
 module.exports = {
   /*
@@ -20,7 +16,6 @@ module.exports = {
     link: [
       { hid: "favicon", rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { hid: "canonical", rel: "canonical", href: "https://www.nickbolles.com" }
-
     ]
   },
   /*
@@ -29,9 +24,10 @@ module.exports = {
   loading: { color: "#3B8070" },
   buildModules: [
     '@nuxt/typescript-build',
-  '@nuxtjs/vuetify'
-],
+  ],
   modules: [
+    '~/modules/vuetify',
+    'nuxt-validate',
     '@nuxtjs/pwa',
     '@nuxtjs/webpackmonitor',
     ['@nuxtjs/google-analytics', {
@@ -40,19 +36,18 @@ module.exports = {
   ],
   plugins: [
     '~/plugins/scrollwizardry.js',
-    '~/plugins/Vee-Validate.js',
     { src: '~/plugins/vue-parallax.js', ssr: false },
     { src: '~/plugins/vue-bar.js', ssr: false }
   ],
   css: [
     // 'node_modules/vuetify/dist/vuetify.min.css',
-    'node_modules/vuetify/src/stylus/main.styl',
+    // 'node_modules/vuetify/src/stylus/main.styl',
     // '~/assets/style/app.styl'
   ],
   vuetify: {
     treeShake: true,
     materialIcons: false,
-    css: false,
+    css: true,
     theme: {
       primary: '#3B8070',
       accent: '#ce93d8',
@@ -83,7 +78,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    extractCSS: true,
+    // extractCSS: true,
     ssr: true,
     // vendor: [
     //   "axios",
@@ -105,9 +100,6 @@ module.exports = {
   transition: {
     name: 'fade-transition',
     mode: 'out-in'
-  },
-  router: {
-    scrollBehavior: ScrollBehavior
   },
   manifest: {
     name: 'Nick\'s Website',

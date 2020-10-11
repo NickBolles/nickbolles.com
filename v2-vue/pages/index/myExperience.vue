@@ -2,7 +2,7 @@
   <v-layout
     id="experience"
     class="ma-3"
-    style="width: 100%; overflow auto"
+    style="width: 100%; overflow: auto"
     column
     align-center
     justify-center
@@ -81,7 +81,7 @@
   import Component from "nuxt-class-component";
 
   @Component({})
-  export default class MyExperienceComponent extends Vue {
+  class MyExperienceComponent extends Vue {
     links = [
       {
         href: "/Nicholas Bolles Resume.pdf",
@@ -110,6 +110,7 @@
       }
     ];
   }
+  export default MyExperienceComponent;
 </script>
 
 <style lang="scss" scoped>

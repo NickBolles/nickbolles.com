@@ -11,29 +11,30 @@
       align-content-start
       justify-center
     >
-      <v-card
-        class="nb card ma-2"
-        v-for="(skills,index) in data"
-        v-bind:key="index"
-        v-if="skills && skills.length"
-      >
-        <v-card-title primary-title>{{skillTypeName(index)}}</v-card-title>
-        <v-card-text flex>
-          <v-container grid-list-xs>
-            <v-layout
-              row
-              wrap
-              justify-center
-            >
-              <skillIcon
-                v-bind:skill="skill"
-                v-for="(skill, index) in skills"
-                v-bind:key="index"
-              ></skillIcon>
-            </v-layout>
-          </v-container>
-        </v-card-text>
-      </v-card>
+      <span v-for="(skills,index) in data" v-bind:key="index">
+        <v-card
+          class="nb card ma-2"
+          v-if="skills && skills.length"
+        >
+          <v-card-title primary-title>{{skillTypeName(index)}}</v-card-title>
+          <v-card-text flex>
+            <v-container grid-list-xs>
+              <v-layout
+                row
+                wrap
+                justify-center
+              >
+                <skillIcon
+                  v-bind:skill="skill"
+                  v-for="(skill, index) in skills"
+                  v-bind:key="index"
+                ></skillIcon>
+              </v-layout>
+            </v-container>
+          </v-card-text>
+        </v-card>
+      </span>
+
     </v-layout>
   </v-layout>
 </template>
@@ -61,13 +62,14 @@
       skillIcon: SkillIconComponent
     }
   })
-  export default class ContactComponent extends Vue {
+  class MyKnowledgeComponent extends Vue {
     data: ISortedSkills = data;
 
     skillTypeName(type: SkillType): string {
       return SkillTypePluralize(type);
     }
   }
+  export default MyKnowledgeComponent;
 </script>
 
 <style lang="scss" scoped>

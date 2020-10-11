@@ -20,9 +20,10 @@ import { IProject } from "~/assets/myProjects";
     projectSummary: ProjectSummaryComponent
   }
 })
-export default class MyProjectsComponent extends Vue {
+class MyProjectsComponent extends Vue {
   projects: IProject[] = myProjects;
 }
+export default MyProjectsComponent;
 </script>
 
 <style>
