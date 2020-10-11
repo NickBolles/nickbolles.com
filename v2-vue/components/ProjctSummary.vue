@@ -57,7 +57,7 @@
     }
   })
   export default class ProjectSummaryComponent extends Vue {
-    @Prop() project: IProject;
+    @Prop() project!: IProject;
 
     get detailsBinding(): Object {
       if (this.$vuetify.breakpoint.mdAndUp) {

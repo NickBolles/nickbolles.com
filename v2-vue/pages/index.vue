@@ -136,7 +136,7 @@
       scrollTo: "#nb-content-bottom-anchor"
     };
 
-    $refs: {
+    $refs!: {
       linksList: HTMLElement;
       content: HTMLElement;
     };

@@ -8,7 +8,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "Nick's Website",
+    title: "Nicks Website",
     meta: [
       { hid: "charset", charset: "utf-8" },
       { hid: "viewport", name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -27,10 +27,12 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: "#3B8070" },
+  buildModules: [
+    '@nuxt/typescript-build',
+  '@nuxtjs/vuetify'
+],
   modules: [
-    "nuxt-ts-module",
     '@nuxtjs/pwa',
-    '~/modules/vuetify',
     '@nuxtjs/webpackmonitor',
     ['@nuxtjs/google-analytics', {
       id: 'UA-55275349-7'
