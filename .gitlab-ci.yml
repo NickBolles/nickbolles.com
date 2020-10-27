@@ -6,7 +6,7 @@ cache:
 
 variables:
   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
-  CONTAINER_RELEASE_IMAGE_OLD: $CI_REGISTRY_IMAGE:old
+  CONTAINER_RELEASE_IMAGE_V1: $CI_REGISTRY_IMAGE:v1
   PRODUCTION_CONTAINER_NAME: www_nickbolles_com
   PRODUCTION_APP_URL: https://$PRODUCTION_DOMAIN
 
@@ -15,16 +15,16 @@ stages:
   - release
   - deploy
 
-build_vue:
+build_v2:
   stage: build
   script:
-    - cd vue
+    - cd v2
     - npm install
     - npm run generate
   artifacts:
-    name: vue-build
+    name: v2-build
     paths:
-      - vue/dist
+      - v2/dist
 
 .build_react:
   stage: build
@@ -39,35 +39,35 @@ build_vue:
     paths:
       - public/react
 
-build_old:
+build_v1:
   stage: build
   script:
-    - echo exporting old
+    - echo exporting v1-raw
     - mkdir ./public || true
-    - mv old/src ./public/old
+    - mv v1-raw/src ./public/v1
   artifacts:
-    name: old-build
+    name: v1-build
     paths:
-      - public/old
+      - public/v1
 
 build_docker:
   image: docker:git
   stage: release
   script:
     - setup_docker
-    - docker build -t $CONTAINER_RELEASE_IMAGE ./vue/
+    - docker build -t $CONTAINER_RELEASE_IMAGE ./v2/
     - docker push $CONTAINER_RELEASE_IMAGE
   only:
     refs:
       - master
       
-.build_docker_old:
+.build_docker_v1:
   image: docker:git
   stage: release
   script:
     - setup_docker
-    - docker build -t $CONTAINER_RELEASE_IMAGE_OLD ./old
-    - docker push CONTAINER_RELEASE_IMAGE_OLD
+    - docker build -t $CONTAINER_RELEASE_IMAGE_V1 ./v1
+    - docker push CONTAINER_RELEASE_IMAGE_V1
   only:
     refs:
       - master
@@ -87,7 +87,7 @@ production:
   script:
     - setup_docker
     - cleanup_production
-    - deploy_production_vue
+    - deploy_production_v2
   environment:
     name: production
     url: $PRODUCTION_APP_URL
@@ -132,16 +132,16 @@ stop_production:
       #-l 'traefik.resume.frontend.redirect.rule'="(.*)resume.nickbolles.com(.*)" \
       #-l 'traefik.resume.frontend.redirect.replacement'="https://www.nickbolles.com/Nicholas%20Bolles%20Resume.pdf" \
       
-  function deploy_production_vue() {
+  function deploy_production_v2() {
     # todo: add a weight to Vue and React to do some A/B testing?
     docker run -d --restart='always' \
       -l 'traefik.enable'='true' \
       -l 'traefik.default.frontend.priority'="10" \
       -l 'traefik.default.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN" \
       -l 'traefik.default.port'="8080" \
-      -l 'traefik.vue.frontend.priority'="9" \
-      -l 'traefik.vue.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/vue/" \
-      -l 'traefik.vue.port'="8080" \
+      -l 'traefik.v2.frontend.priority'="9" \
+      -l 'traefik.v2.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/v2/" \
+      -l 'traefik.v2.port'="8080" \
       --net='proxied' \
       --name $PRODUCTION_CONTAINER_NAME \
       $CONTAINER_RELEASE_IMAGE
@@ -150,11 +150,11 @@ stop_production:
     # todo: add a weight to Vue and React to do some A/B testing?
     docker run -d --restart='always' \
       -l 'traefik.enable'='true' \
-      -l 'traefik.old.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/old/" \
-      -l 'traefik.old.port'="8080" \
+      -l 'traefik.v1.frontend.rule'="Host:www.$PRODUCTION_DOMAIN,$PRODUCTION_DOMAIN;PathPrefixStrip:/v1/" \
+      -l 'traefik.v1.port'="8080" \
       --net='proxied' \
       --name $PRODUCTION_CONTAINER_NAME \
-      $CONTAINER_RELEASE_IMAGE_OLD
+      $CONTAINER_RELEASE_IMAGE_V1
   }
 
   function cleanup_production() {
