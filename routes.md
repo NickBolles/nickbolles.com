@@ -1,6 +1,6 @@
 ## List of routes and sub domains for nickbolles.com
 
-resume.nickbolles.com
+resume.nickbolles.com (deprecated, use nickbolles.com/resume instead, this way it's handled by the host, vercel in this case)
 - Handled by Traefik as a redirect: 
 ```
 [entryPoints]
