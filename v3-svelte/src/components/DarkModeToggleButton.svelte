@@ -1,14 +1,8 @@
 <script lang="ts">
   import { scale } from "svelte/transition";
-  export let value = false;
+  export let darkMode = false;
 
-  const handleClick = () => (value = !value);
-  // const getTooltip = (darkEnabled: boolean) => darkEnabled ? "I like to burn my retinas" : "Switch to the dark side";
-  
-  // let tooltip: string = getTooltip(value);
-  // $: {
-  //   tooltip = getTooltip(value);
-  // }
+  const handleClick = () => (darkMode = !darkMode);
 </script>
 
 <style>
@@ -52,7 +46,7 @@
   <svg 
     viewBox="0 0 24 24" class="duration-500 relative">
         
-    {#if value}
+    {#if darkMode}
       <g class="fill-current"  >
         <!-- First (big) star -->
         <path 
