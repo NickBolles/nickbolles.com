@@ -1,7 +1,7 @@
 {
   "name": "www_nickbolles_com",
   "description": "My personal website",
-  "version": "0.0.1",
+  "version": "3.0.0",
   "scripts": {
     "dev": "sapper dev",
     "build": "cross-env-shell NODE_ENV=production npm run clean && sapper export --legacy",
