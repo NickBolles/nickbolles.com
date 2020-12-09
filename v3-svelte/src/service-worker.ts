@@ -7,6 +7,10 @@ const ASSETS = `cache${timestamp}`
 const toCache = (shell as string[]).concat(files as string[])
 const cached = new Set(toCache)
 
+// don't cache the resume
+const netFirstAssets =  new Set(["Nicholas%20Bolles%20Resume.pdf"]);
+
+
 self.addEventListener('install', <EventType extends ExtendableEvent>(event: EventType) => {
   event.waitUntil(
     caches
@@ -42,8 +46,9 @@ self.addEventListener('fetch', <EventType extends FetchEvent>(event: EventType) 
   // ignore dev server requests
   if (url.hostname === self.location.hostname && url.port !== self.location.port) return
 
+  
   // always serve static files and bundler-generated assets from cache
-  if (url.host === self.location.host && cached.has(url.pathname)) {
+  if (url.host === self.location.host && cached.has(url.pathname) && !netFirstAssets.has(url.pathname)) {
     event.respondWith(caches.match(event.request))
     return
   }
