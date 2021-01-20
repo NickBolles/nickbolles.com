@@ -25,7 +25,7 @@
     "axios": "^0.17.1",
     "babel-plugin-transform-imports": "^1.4.1",
     "babel-polyfill": "^6.26.0",
-    "gsap": "^2.0.2",
+    "gsap": "^3.6.0",
     "material-design-icons-iconfont": "^3.0.3",
     "multi-loader": "^0.1.0",
     "node-sass": "^4.14.1",
