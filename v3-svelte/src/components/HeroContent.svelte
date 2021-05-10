@@ -71,7 +71,7 @@
   <!-- divider line -->
   <div class="mx-auto lg:mx-0 w-4/5 pt-4 border-b-2 border-teal-500 opacity-25" />
   <p class="pt-4 text-sm text-secondary">
-    Currently I'm working as a developer at <a href="https://www.epic.com/about" class="font-bold">Epic</a> on the <a href="https://www.epic.com/software" class="font-bold">Referrals & Authorizations</a> team where I get the opportunity to solve problems that save lives.
+    Currently I'm working as a developer at <a href="www.docusign.com" class="font-bold">Docusign</a> on the Signing team, focusing on a frontend Backbone to React conversion.
   </p>
   
   <p class="pt-4 text-sm text-secondary">
