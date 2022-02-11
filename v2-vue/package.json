@@ -28,7 +28,7 @@
     "gsap": "^2.0.2",
     "material-design-icons-iconfont": "^3.0.3",
     "multi-loader": "^0.1.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.3.0",
     "nuxt-class-component": "^1.2.0",
     "nuxt-property-decorator": "^2.8.8",
