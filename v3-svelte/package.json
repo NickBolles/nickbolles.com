@@ -51,7 +51,7 @@
     "sapper": "^0.28.0",
     "stylelint": "^13.7.2",
     "stylelint-config-recommended": "^3.0.0",
-    "svelte": "^3.17.3",
+    "svelte": "^3.49.0",
     "svelte-check": "^1.0.46",
     "svelte-image": "^0.2.7",
     "svelte-preprocess": "^4.3.0",
