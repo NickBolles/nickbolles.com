@@ -28,8 +28,10 @@ export const removeDarkModeWatch = () => darkQuery().removeEventListener('change
 /* Set the theme to the DOM */
 export const setTheme = (dark: boolean) => {
   const el = document.querySelector('.theme-target')
-  document.querySelector('.theme-target').classList.remove(dark ? 'mode-light' : 'mode-dark')
-  el.classList.add(dark ? 'mode-dark' : 'mode-light')
+  if (el) {
+    el.classList.remove(dark ? 'mode-light' : 'mode-dark')
+    el.classList.add(dark ? 'mode-dark' : 'mode-light')
+  }
   storePreference(dark)
 }
 
